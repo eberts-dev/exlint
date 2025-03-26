@@ -23,7 +23,6 @@ const BestPractices = () => {
 				<div className={styles.wrapper}>
 					<div className={styles.window}>
 						<div className={styles.container}>
-							
 							<div className={styles.practice}>
 								<div className={styles.title}> 
 									{heroContent.title[0]}<br />{heroContent.title[1]}
@@ -48,7 +47,6 @@ const BestPractices = () => {
 							<img className={styles.exlintLogo} src={exlint} alt="Логотип Exlint"/>
 						</div>
 
-					
 						<div className={styles.today}>{heroContent.getStarted}</div>						
 						
 						<CopyableInput

@@ -1,11 +1,12 @@
 import Menu from '@components/menu/Menu'
+import Btn from '@ui/Btn/Btn'
+import CopyableInput from '@ui/CopyableInput'
+
 import styles from './Header.module.scss'
 
-import Btn from '@ui/Btn/Btn'
-import CopyBtn from '@ui/CopyBtn/CopyBtn'
-
-
 const Header = () => {
+
+	const installCommand = "npm install --global @exlint.io/cli"
 
 	const titles = [
 		"Empower Best Practices",
@@ -24,21 +25,17 @@ const Header = () => {
 					</h1>
 
 					<div className={styles.console}>
+						<CopyableInput
+							value={installCommand}
+							inputId="exlint-install-command"
+							ariaLabel="Exlint installation command"
+							className={styles.command}
+						/>
 
-							<div className={styles.command}>
-							
-								<input type="text" value="npm install --global @exlint.io/cli" id="copyInput" placeholder="npm install --global @exlint.io/cli" readOnly/>
-								
-								
-								<CopyBtn targetId="install"/>
-									
-							</div>
-						
 						<div className={styles.qstart}>
 							<Btn className={styles.btn}>Quick Start</Btn>
 							<p className={styles.text}>Keep your projects clean with Exlint.</p>
 						</div>
-
 
 						<div className={styles.terminal}>
 							<p className={styles.terminal__text}>
