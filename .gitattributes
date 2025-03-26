@@ -1,6 +1,8 @@
 *.jsx linguist-language=JavaScriptReact
 *.tsx linguist-language=TypeScriptReact
 vite.config.js linguist-language=JavaScript
+*.scss linguist-documentation
+*.css linguist-documentation
 assets/* linguist-vendored
 styles/* linguist-vendored
 data/* linguist-vendored
