@@ -1,0 +1,14 @@
+@mixin centered-block-desc($width: 1440px) {
+  width: $width;
+  margin: 0 auto;
+}
+
+@mixin centered-block-pad($width: 930px) {
+  width: $width;
+  margin: 0 auto;
+}
+
+@mixin centered-block-phone($width: 440px) {
+  width: $width;
+  margin: 0 auto;
+}

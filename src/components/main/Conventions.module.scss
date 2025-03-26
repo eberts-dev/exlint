@@ -1,0 +1,171 @@
+//дублируется
+.wrapper {
+  @media (max-width: 1440px) {
+    @include centered-block-desc;
+  }
+  @media (max-width: 1200px) {
+    @include centered-block-pad;
+  }
+  @media (max-width: 560px) {
+    @include centered-block-phone;
+  }
+}
+
+.stylelint {
+  padding-bottom: 192px;
+}
+
+.repo {
+  z-index: 99;
+  position: relative;
+  background-size: cover;
+  background-position: 100% 81%;
+  background: url('@assets/img/shadow.svg') no-repeat;
+}
+
+.title {
+  z-index: 1;
+  max-width: 595px;
+  margin: 0 auto;
+  font-weight: 700;
+	padding: 0 20px;
+  padding-top: 69px;
+  text-align: center;
+  padding-bottom: 64px;
+  background: $h2-gradient;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pic {
+  position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.img {
+  text-align: center;
+  position: relative;
+	max-width: 860px;
+	&::before {
+		left: 50%;
+		content: '';
+		z-index: -1;
+		width: 12px;
+		height: 125px;
+		bottom: -114px;
+		position: absolute;
+		background-size: contain;
+		background: url('@assets/img/line1.svg') no-repeat;
+	}
+	& img {
+		width: 860px;
+		/* @media (max-width: 470px) {} */
+	}
+}
+
+.code {
+  top: 87px;
+  left: auto;
+  width: 334px;
+  position: absolute;
+  border-radius: 5px;
+  padding: 31px 24px;
+  background: $code-bg;
+  border: 2px solid $shadowC;
+  box-shadow: 0px 0px 15px 4px $main-btn;
+}
+
+.added {
+  font-size: 18px;
+  padding-bottom: 10px;
+  color: $code-gray;
+}
+
+.named {
+  font-size: 18px;
+  color: $white;
+	& span {
+		color: $code-frame;
+	}
+}
+
+.run {
+  width: 260px;
+  padding: 17px 0;
+  font-size: 20px;
+  position: relative;
+  text-align: center;
+  border-radius: 5px;
+  margin: 109px auto;
+  margin-bottom: 120px;
+  box-shadow: $box;
+  color: $main-txt;
+  background: $code-bg;
+  border: 2.5px solid $code-fragment;
+	&::before {
+		z-index: -1;
+		right: auto;
+		content: '';
+		width: 330px;
+		left: -188px;
+		height: 125px;
+		bottom: -122px;
+		position: absolute;
+		background-size: contain;
+		background: url("@assets/img/line2.svg") no-repeat;
+	}
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 69px;
+  @media (max-width: 570px) {
+		flex-wrap: wrap;
+	}
+}
+
+.css {
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  background: $code-bg;
+  border: 2.5px solid $main-btn;
+  box-shadow: $shadow;
+	&::before {
+		top: 159px;
+		left: auto;
+		content: '';
+		z-index: -1;
+		width: 83px;
+		height: 12px;
+		right: -83px;
+		position: absolute;
+		background: url("@assets/img/line3.svg") no-repeat;
+	}
+}
+
+.output {
+  padding: 20px;
+  border-radius: 5px;
+  background: $code-bg;
+  border: 2.5px solid $main-btn;
+  box-shadow: $box-s;
+}
+
+.number {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  color: $code-gray;
+  &:last-child {
+    width: 458px;
+    padding-right: 0px;
+  } 
+}
+
+.number-list {
+  position: relative;
+}

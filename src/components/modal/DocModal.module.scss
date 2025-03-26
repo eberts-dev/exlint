@@ -1,0 +1,72 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  padding-top: 2em;
+  line-height: 1.5rem;
+}
+
+.content {
+  background: $code-bg;
+  color: $white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  cursor: default;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  
+  .visible & {
+    transform: translateY(0);
+  }
+}
+
+h3 { 
+  padding-bottom: 1.3rem;
+}
+
+.modalBtn {
+  display: flex;
+  justify-self: flex-end;
+  cursor: pointer;
+}
+
+.scrollableContent {
+  padding: 20px;
+  overflow-y: auto;
+  max-height: calc(80vh - 15rem);
+  margin-top: 1.5rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,35 @@
+@use '@styles/colors' as *; 
+
+.number {
+  color: $code-gray;
+}
+
+.purple {
+  padding-left: 40px;
+  color: $code-color;
+}
+
+.rose {
+  padding-bottom: 20px;
+  color: $code-tag;
+}
+
+.hot {
+  color: $code-red;
+}
+
+.gelb {
+  color: $code-class;
+}
+
+.red {
+  color: $red-txt;
+}
+
+.white {
+  color: $white;
+}
+
+.gray {
+  color: $code-gray;
+}

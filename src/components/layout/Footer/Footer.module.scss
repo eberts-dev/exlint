@@ -1,0 +1,133 @@
+@use '@styles/colors' as *; 
+
+.wrapper {
+  max-width: 1280px;
+  width: calc(100% - 3em);
+  margin: 0 auto;
+}
+
+.container {
+  background: $body;
+  border-radius: 1.3em 1.3em 0 0;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  padding: 49px 30px;
+  justify-content: space-between;
+	@media (max-width: 1170px) {
+		flex-wrap: wrap;
+    width: 100%;
+		padding-top: 50px;
+    flex-direction: column;
+    gap: 32px;
+
+	}
+  @media (max-width: 990px) {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.pad {
+  width: 685px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+	@media (max-width: 990px) {
+		padding: 0 20px;
+    gap: 40px;
+	}
+	@media (max-width: 560px) {
+		flex-wrap: wrap;
+		flex-direction: column;
+    justify-content: center;
+		width: 320px;
+	}
+}
+
+.logo {
+  width: 10em;
+}
+
+.userSection {
+  display: flex;
+  gap: 10px;
+}
+
+.logout {
+  cursor: pointer;
+  font-size: 16px;
+  padding-left: 0;
+  font-weight: 500;
+  background: none;
+  color: $main-txt;
+}
+
+.username {
+  color: $main-btn;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+	gap: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: $code-txtColor;
+	& :first-child {
+		padding-right: 21px;
+	}
+}
+
+.links {
+  padding-bottom: 1.3em;
+}
+
+.doc {
+  position: relative;
+  font-size: 16px;
+  background: none;
+  color: $white;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.links-item a {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: $footer-txt;
+}
+
+.links-item:nth-child(2) {
+  padding: 0 62px;
+}
+
+.discord {
+	width: 54px;
+	height:38px;
+  @media (max-width: 960px) {
+    width: 30px;
+  }
+}
+
+.git {
+	width: 42px;
+	height: 42px;
+  @media (max-width: 960px) {
+    width: 30px;
+  }
+}
+
+.social {
+	display: flex;
+  gap: 20px;
+}
+

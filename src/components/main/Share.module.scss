@@ -1,0 +1,99 @@
+.wrapper {
+	padding: 0 30px;
+}
+
+.blocks {
+  gap: 96px;
+  display: flex;
+  padding-bottom: 33px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 42px;
+  padding-bottom: 52px;
+  background: linear-gradient(75deg, #8247FF 11%, #E7E7E6 52.49%);
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 24px;
+  color: $white;
+  padding-bottom: 64px;
+}
+
+.errors {
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  background: $code-bg;
+  border: 2.5px solid $main-btn;
+  box-shadow: 0px 0px 43px 0px rgba(151, 71, 255, 0.50);
+}
+
+.gradient {
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  background: $p-gradient;
+  font-family: 'Poppins', sans-serif;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.option {
+  padding: 16px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: $white;
+}
+
+.managers,
+.developers {
+  width: 456px;
+}
+
+.list {
+  font-size: 20px;
+  list-style: disc;
+  padding-left: 15px;
+  color: $list;
+	& .item {
+		font-family: 'Poppins', sans-serif;
+		line-height: 130.49%;
+	}
+}
+
+.command  {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.command code {
+  z-index: 0;
+  width: 345px;
+  display: block;
+  font-size: 20px;
+  padding: 17px 0;
+  text-align: center;
+  color: $white;
+  margin-bottom: -25px;
+  background: $code-bg;
+  border: 2.5px solid $code-border-pink;
+  box-shadow: $box-s;
+}
+
+.screenshot {
+  border-radius: 6px;
+}
+
+.lila {
+  color: $main-btn;
+}

@@ -1,0 +1,139 @@
+.exlint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1440px;
+  margin: 0 auto;
+  padding: 20px 0;
+  column-gap: 20px;
+  @media (max-width: 1440px) {
+    @include centered-block-pad;
+  }
+}
+
+.logo {
+  width: 10rem;
+}
+
+.startBtn {
+  width: 10rem;
+  border-radius: 10rem;
+}
+
+.username {
+  color: $white;
+  font-size: 1em;
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: $code-bg;
+  border-radius: 1em;
+  border: 0.2em solid $main-btn;
+  width: 100%;
+  text-align: center;
+}
+
+.list { 
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0 40px;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  column-gap: 1.5rem;
+  @media (max-width: 550px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.start {
+  width: 130px;
+  padding: 9px 0;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 30px;
+  color: $white;
+  background: $main-btn;
+}
+
+.login,
+.logout {
+  cursor: pointer;
+  font-size: 16px;
+  padding-left: 0;
+  font-weight: 500;
+  background: none;
+  padding-right: 16px;
+  color: $main-txt;
+}
+
+.doc,
+.git,
+.discord {
+  font-size: 16px;
+}
+
+.doc {
+  position: relative;
+  background: none;
+  color: $white;
+  &:hover {
+    cursor: pointer;
+  }
+  &::before {
+		content: '';
+		right: auto;
+    top: -8px;
+    left: -36px;
+    width: 25px;
+    height: 31px;
+		position: absolute;
+		background-size: contain;
+		background: url('@assets/icons/docs.svg') center no-repeat;
+	}
+}
+
+.discord {
+  position: relative;
+	&::before {
+		content: '';
+    position: absolute;
+		right: auto;
+		width: 28px;
+		left: -35px;
+		height: 20px;
+		background-size: cover;
+		background: url('@assets/icons/discord.svg') center no-repeat;
+	}
+}
+
+.git {
+  position: relative;
+  display: inline-block;
+  padding: 0 61px 0 53px;
+	&::before {
+		content: '';
+		left: 25px;
+		width: 20px;
+		right: auto;
+		height: 20px;
+		position: absolute;
+		background-size: cover;
+		background: url('@assets/icons/github.svg') center no-repeat;
+	}
+}
+
+.userSection {
+  display: flex;
+  gap: 1em;
+}
