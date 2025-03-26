@@ -3,4 +3,5 @@
 *.scss linguist-documentation
 *.css linguist-documentation
 assets/* linguist-vendored
+styles/* linguist-vendored
 data/* linguist-vendored
