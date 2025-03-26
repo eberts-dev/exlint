@@ -1,2 +1,5 @@
 *.js linguist-language=JavaScript
 *.jsx linguist-language=JavaScriptReact
+*.scss linguist-documentation
+assets/styles/* linguist-vendored
+node_modules/* linguist-vendored
