@@ -1,5 +1,6 @@
-*.js linguist-language=JavaScript
 *.jsx linguist-language=JavaScriptReact
-*.scss linguist-documentation
+*.js linguist-language=JavaScript
 assets/styles/* linguist-vendored
 node_modules/* linguist-vendored
+*.scss linguist-documentation
+*.css linguist-documentation
