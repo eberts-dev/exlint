@@ -13,7 +13,7 @@
 
 .window {
   position: relative;
-  padding: 55px 85px;
+  padding: 55px;
   border-radius: 10px;
   border: 2.5px solid $main-btn;
   background: $step2-gradient;
@@ -38,6 +38,12 @@
   column-gap: 30px;
 }
 
+.practice {
+  width: 100%;
+  border-bottom: 0.1rem solid $list;
+  max-width: 35rem;
+}
+
 .title {
   font-size: 32px;
   font-weight: 600;
@@ -52,21 +58,35 @@
   color: $code-txtColor;
 }
 
+.exlintLogo {
+  @media (max-width: 960px) {
+    display: none;
+  }
+}
+
+input {
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+.installInput {
+  cursor: text;
+  user-select: all;
+}
+
 .list {
-  margin: 0;
   display: flex;
-  padding: 50px 0;
-  position: relative;
-  align-items: center;
   justify-content: space-between;
-	&::before {
-		bottom: 0;
-		height: 1px;
-		content: '';
-    width: 100%;
-		position: absolute;
-		background: $list;
-	}
+  align-items: flex-start;
+  padding: 3rem 0;
+  gap: 3rem;
+  @media (max-width: 640px) {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 1rem;
+  }
 }
 
 .doc {
@@ -83,28 +103,33 @@
   font-size: 18px;
   position: relative;
   background: none;
-  padding-left: 37px;
+  padding-left: 2rem;
   color: $code-txtColor;
   &::before {
     left: 0;
     top: -7px;
-    width: 32px;
-    height: 30px;
+    width: 27px;
+    height: 32px;
     content: '';
     position: absolute;
     background-size: contain;
     background: url('@assets/icons/github.svg') center no-repeat;
+  }
+  &:hover {
+    color: $main-btn;
+    transition: .2s;
   }
 }
 
 .docs {
   font-size: 18px;
   font-weight: 400;
-  padding-left: 37px;
+  padding-left: 2rem;
   position: relative;
   background: none;
   border: none;
   color: $white;
+  cursor: pointer;
   display: inline-block;
   text-decoration: none;
   &::before {
@@ -117,14 +142,18 @@
     left: 0;
     top: -3px;
   }
+  &:hover {
+    color: $main-btn;
+    transition: .2s;
+  }
 }
 
-.server {
+.discord {
   font-size: 18px;
   position: relative;
   background: none;
-  padding-left: 37px;
   color: $code-txtColor;
+  padding-left: 2rem;
   &::before {
     content: '';
     position: absolute;
@@ -132,8 +161,12 @@
     background-size: contain;
     width: 42px;
     height: 30px;
-    left: -10px;
+    left: -15px;
     top: -6px;
+  }
+  &:hover {
+    color: $main-btn;
+    transition: .2s;
   }
 }
 
@@ -146,8 +179,7 @@
   padding-bottom: 17px;
 }
 
-
-.console-wrapper {
+.consoleLine {
 	display: flex;
 	justify-content: space-between;
 	padding: 15px;
@@ -164,22 +196,4 @@
     box-shadow: none;
     margin-bottom: 12px;
   }
-  @media (max-width: 970px) {
-    width: 100%;
-  }
-  @media (max-width: 470px) {
-
-  }
-}
-
-@media (max-width: 1170px) {
-	.img {
-		display: none;
-	}
-}
-
-@media (max-width: 470px) {
-	input {
-		width: 270px;
-	}
 }
