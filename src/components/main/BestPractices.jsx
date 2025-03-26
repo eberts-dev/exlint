@@ -9,16 +9,24 @@ import styles from './BestPractices.module.scss'
 const BestPractices = () => {
 
 	const { isModalOpen, openModal, closeModal } = useModal();
-	
+
+	const heroContent = {
+		title: ["Empower efficient", "conventional best practices"],
+		description: 'Run your first complance check in a matter of minutes',
+	}
+
 	return ( 
 			<section className={styles.empower}>
 				<div className={styles.wrapper}>
-					<div className={styles.block}>
+					<div className={styles.window}>
 						<div className={styles.container}>
+
 							<div className={styles.practice}>
 
-								<div className={styles.title}>Empower efficient<br/>conventional best practices</div>
-								<div className={styles.description}>Run your first complance check in a matter of minutes</div>
+							<div className={styles.title}> 
+								{heroContent.title[0]}<br />{heroContent.title[1]}
+							</div>
+							<div className={styles.description}>{heroContent.description}</div>
 					
 								<ul className={styles.list}>
 
@@ -36,7 +44,7 @@ const BestPractices = () => {
 								</ul>
 
 							</div>
-							
+
 							<img className={styles.img} src={exlint} alt="Логотип Exlint"></img>
 
 						</div>

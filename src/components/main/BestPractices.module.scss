@@ -1,11 +1,3 @@
-.wrapper {
-  max-width: 800px;
-  margin: 0 auto;
-  @media (max-width: 970px) {
-    max-width: 470px;
-  }
-}
-
 .empower {
   padding: 300px 0;
   background-size: cover;
@@ -13,8 +5,30 @@
   background: url('@assets/img/empower-bg.png') no-repeat;
 }
 
-.practice {
-  width: 542px;
+.wrapper {
+  width: calc(100% - 10rem);
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.window {
+  position: relative;
+  padding: 55px 85px;
+  border-radius: 10px;
+  border: 2.5px solid $main-btn;
+  background: $step2-gradient;
+	&::after {
+		top: 0;
+		left: 0;
+		z-index: -1;
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		filter: blur(10px);
+		-webkit-filter: blur(10px);
+		background: $step1-gradient;
+	}
 }
 
 .container {
@@ -22,10 +36,6 @@
   align-items: center;
   justify-content: space-between;
   column-gap: 30px;
-}
-
-.img {
-  height: 150px;
 }
 
 .title {
@@ -136,25 +146,6 @@
   padding-bottom: 17px;
 }
 
-.block {
-  position: relative;
-  padding: 55px 85px;
-  border-radius: 10px;
-  border: 2.5px solid $main-btn;
-  background: $step2-gradient;
-	&::after {
-		top: 0;
-		left: 0;
-		z-index: -1;
-		content: '';
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		filter: blur(10px);
-		-webkit-filter: blur(10px);
-		background: $step1-gradient;
-	}
-}
 
 .console-wrapper {
 	display: flex;
@@ -184,9 +175,6 @@
 @media (max-width: 1170px) {
 	.img {
 		display: none;
-	}
-	.wrapper {
-		width: 800px;
 	}
 }
 
