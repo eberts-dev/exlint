@@ -46,8 +46,8 @@ const Header = () => {
 					<Menu/>
 
 					<h1 className={styles.title}>
-							{heroContent.title.l1}<br />
-							<span>{heroContent.title.l2}</span>
+						{heroContent.title.l1}<br />
+						<span>{heroContent.title.l2}</span>
 					</h1>
 
 					<div className={styles.console}>
