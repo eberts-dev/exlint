@@ -1,7 +1,8 @@
-import styles from '@components/Ide/Ide.module.scss'
-import code from '@components/Ide/Stylelint.module.scss'
+import styles from './CodeBock.module.scss'
+import code from './Stylelint.module.scss'
 
 const Stylelint = () => {
+
 	return ( 
 		<div className={code.stylelint}>
 			<p className={styles.rose}>--- Stylelint output ---</p>

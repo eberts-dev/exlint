@@ -1,7 +1,6 @@
-import ide from '../ide/Ide.module.scss'
-import styles from './Share.module.scss'
-
 import screen from '@assets/img/git.jpg'
+import Ide from '@components/ide/Ide'
+import styles from './Share.module.scss'
 
 const Share = () => {
 	return ( 
@@ -15,7 +14,8 @@ const Share = () => {
 			
 					<div className={`${styles.blocks} ${styles['mobile-managers']}`}>
 						<div className={styles.errors}>
-							<code>
+						<Ide/>
+							{/* <code>
 								<div className={styles.code}>
 									<p className={ide.rose}>--- Stylelint output ---</p>
 									<p className={ide.white}>format.css</p>
@@ -44,7 +44,7 @@ const Share = () => {
 									<p className={ide.rose}>--- Prettier output ---</p>
 									<p className={ide.white}>Checking formatting...</p>
 								</div>
-							</code>
+							</code> */}
 						</div>
 			
 						<div className={styles.managers}>

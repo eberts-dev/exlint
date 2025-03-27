@@ -1,85 +1,26 @@
-import styles from './Ide.module.scss'
+import CodeBlock from './CodeBlock'
 
 const Ide = () => {
+
+	const codeLines = [
+		{number: 1, parts: [{cls: 'red', txt: 'body' }, {cls: 'white', txt: ' {' }]},
+		{number: 2, parts: [{cls: 'purple', txt: 'background-color' }, {cls: 'white', text: ': black;' }]},
+		{number: 3, parts: [{cls: 'white', txt: '}' }]},
+		{number: 4, parts: [{cls: '', txt: ' ' }]},
+		{number: 5, parts: [{cls: 'red', txt: 'h1' }, {cls: 'white', txt: ' {' }]},
+		{number: 6, parts: [{cls: 'purple', txt: 'font-size' }, {cls: 'white', txt: ': ' }, {cls: 'rose', txt: '22px' }, {cls: 'white', txt: ';' }]},
+		{number: 7, parts: [{cls: 'purple', txt: 'color' }, {cls: 'white', txt: ': ' }, {cls: 'hot', txt: '#ff0000' }, {cls: 'white', txt: ';' }]},
+		{number: 8, parts: [{cls: 'white', txt: '}' }]},
+		{number: 9, parts: [{cls: '', txt: ' ' }]},
+		{number: 10, parts: [{cls: 'gelb', txt: '.siteHeader' }, {cls: 'white', txt: ' {' }]},
+		{number: 11, parts: [{cls: 'purple', txt: 'font-size' }, {cls: 'white', txt: ': ' }, {cls: 'rose', txt: '22px' }, {cls: 'white', txt: ';' }]},
+		{number: 12, parts: [{cls: 'purple', txt: 'color' }, {cls: 'white', txt: ': ' }, {cls: 'rose', txt: '22px' }, {cls: 'white', txt: ';' }]},
+		{number: 13, parts: [{cls: 'purple', txt: 'color' }, {cls: 'white', txt: ': ' }, {cls: 'rose', txt: 'white' }, {cls: 'white', txt: ';' }]},
+		{number: 14, parts: [{cls: 'white', txt: '}' }]},
+	]
+	
 	return ( 
-		<>
-			<code>
-				<div className={styles.output}>
-					<div className={styles['stylelint__number']}>
-						<ul className="stylelint__number-list">
-							<li>
-								<span className={styles.number}>1 </span>
-								<span className={styles.red}>body</span> 
-								<span className={styles.white}>{'{'}</span>
-							</li>
-							<li>
-								<span className={styles.number}>2</span> 
-								<span className={styles.purple}>background-color</span>
-								<span className={styles.white}>: black;</span> 
-							</li>
-							<li>
-								<span className={styles.number}>3 </span> 
-								<span className={styles.white}>{'}'}</span></li>
-							<li>
-								<span className={styles.number}>4</span>&nbsp;
-							</li>
-							<li>
-								<span className={styles.number}>5</span> 
-								<span className={styles.red}> h1 </span>
-								<span className={styles.gray}>{'{'}</span>
-								</li>
-							<li>
-								<span className={styles.number}>6</span> 
-								<span className={styles.purple}>font-size</span>
-								<span className={styles.white}>:</span> 
-								<span className={styles.rose}>22px</span>
-								<span className={styles.gray}>;</span>
-							</li>
-							<li>
-								<span className={styles.number}>7</span> 
-								<span className={styles.purple}>color</span>
-								<span className={styles.gray}>:</span> 
-								<span className={styles.hot}> #ff0000</span>
-								<span className={styles.gray}>;</span>
-							</li>
-							<li>
-								<span className={styles.number}>8 </span> 
-								<span className={styles.white}>{'}'}</span>
-							</li>
-							<li>
-								<span className={styles.number}>9</span>&nbsp;
-							</li>
-							<li>
-								<span className={styles.number}>10</span> 
-								<span className={styles.gelb}> .siteHeader</span> 
-								<span className={styles.gray}>{'{'}</span>
-							</li>
-							<li>
-								<span className={styles.number}>11</span> 
-								<span className={styles.purple}>font-size</span>
-								<span className={styles.gray}>:</span> 
-								<span className={styles.rose}>50px</span>
-								<span className={styles.gray}>;</span>
-							</li>
-							<li>
-								<span className={styles.number}>12</span> 
-								<span className={styles.purple}>color</span>
-								<span className={styles.white}>: white;</span>
-							</li>
-							<li>
-								<span className={styles.number}>13</span> 
-								<span className={styles.purple}>color</span>
-								<span className={styles.white}>: black;</span>
-							</li>
-							<li>
-								<span className={styles.number}>14 </span> 
-								<span className={styles.white}>{'}'}</span>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</code>
-		</>
+			<CodeBlock lines={codeLines} />
 	 );
 }
  
