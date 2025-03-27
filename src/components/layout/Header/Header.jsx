@@ -8,20 +8,46 @@ const Header = () => {
 
 	const installCommand = "npm install --global @exlint.io/cli"
 
-	const titles = [
-		"Empower Best Practices",
-		"Hassle Free, In No Time"
-	]
+	const heroContent = {
+		title: {
+			l1: "Empower Best Practices",
+			l2: "Hassle Free, In No Time"
+		},
+		description: "Keep your projects clean with Exlint.",
+		btnText: "Quick Start",
+	}
 
+	const terminalContent = {
+		lines: [
+			{
+				prefix: "- ",
+				parts: [
+					"Lorem ipsum dolor sit amet, consectetu",
+					"[v] adipiscing elit, sed do eiusmod tempor",
+					"[v] incididunt ut labore et dolore magna aliqua."
+				]
+			},
+			{
+				prefix: "- ",
+				parts: [
+					"Ut enim ad minim veniam, quis nostrud",
+					"exercitation ullamco laboris nisi ut aliquip",
+					"ex ea commodo consequat.."
+				],
+				highlightLast: true //выделение текста
+			}
+		]
+	}
+	
 	return ( 
 			<header className={styles.stars}>
 				<div className={styles.wrapper}>
 
 					<Menu/>
+
 					<h1 className={styles.title}>
-						{titles.map((title, index) => (
-							<span key={index}>{title}<br/></span>
-						))}
+							{heroContent.title.l1}<br />
+							<span>{heroContent.title.l2}</span>
 					</h1>
 
 					<div className={styles.console}>
@@ -33,25 +59,29 @@ const Header = () => {
 						/>
 
 						<div className={styles.qstart}>
-							<Btn className={styles.btn}>Quick Start</Btn>
-							<p className={styles.text}>Keep your projects clean with Exlint.</p>
+							<Btn className={styles.btn}>{heroContent.btnText}</Btn>
+							<p className={styles.text}>{heroContent.description}</p>
 						</div>
 
 						<div className={styles.terminal}>
-							<p className={styles.terminal__text}>
-								<code>- Lorem ipsum dolor sit amet, consectetur <br/>
-												[v] adipiscing elit, sed do eiusmod tempor <br/>
-												[v] incididunt ut labore et dolore magna aliqua.
-								</code>
-							</p>
-							<p className={styles.terminal__text}>
-									<code>- Ut enim ad minim veniam, quis nostrud<br/>
-													exercitation ullamco laboris nisi ut aliquip <br/>
-													<span>ex ea commodo consequat.</span>
-									</code>
-							</p>
-						</div>
+							{terminalContent.lines.map((line, lineIndex) => (
+								<p key={lineIndex} className={styles.terminal__text}>
+									{line.prefix}
+									{line.parts.map((part, partIndex) => {
+										const isHighlighted = line.highlightLast && partIndex === line.parts.length - 1;
 
+										return (
+											<span key={partIndex}
+												    className={isHighlighted ? styles.highlighted : ""}
+											>
+												{part}
+												<br/>
+										</span>
+										)
+									})}
+								</p>
+							))}
+						</div>
 					</div>
 				</div>
 			</header>

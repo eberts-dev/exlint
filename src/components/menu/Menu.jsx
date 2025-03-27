@@ -32,58 +32,56 @@ const Menu = () => {
 	}
 
 	return ( 
-		<>
-			<div className={styles.exlint}>
-				<img className={styles.logo} src={logo} alt="exlint"/>
-		
-				<ul className={styles.list}>
-					{Object.values(MENU_ITEMS).map((item) => (
-						<li key={item.id}>
-							{item.href ? (
-								<a {...getMenuItemProps(item)}>
-									{item.label}
-								</a>
-							) : (
-								<button type="button" {...getMenuItemProps(item)}>
-									{item.label}
-								</button>
-							)}
-						</li>
-					))}
-				</ul>
-			
-				<div className={styles.buttons}>
-						{isAuthenticated ? (
-							<div 
-								className={styles.userSection}
-								>
-									<span className={styles.username}
-									>
-										{currentUser.name}
-									</span>
-									<button 
-										className={styles.logout} 
-										onClick={handleLogout}
-										>
-											Logout
-									</button>
-							</div>
-							) : (
-								<button 
-									className={styles.login} 
-									onClick={() => setPopupOpen(true)}
-								>
-									Log in
-								</button>
+		<div className={styles.exlint}>
+			<img className={styles.logo} src={logo} alt="exlint"/>
+	
+			<ul className={styles.list}>
+				{Object.values(MENU_ITEMS).map((item) => (
+					<li key={item.id}>
+						{item.href ? (
+							<a {...getMenuItemProps(item)}>
+								{item.label}
+							</a>
+						) : (
+							<button type="button" {...getMenuItemProps(item)}>
+								{item.label}
+							</button>
 						)}
+					</li>
+				))}
+			</ul>
+		
+			<div className={styles.buttons}>
+					{isAuthenticated ? (
+						<div 
+							className={styles.userSection}
+							>
+								<span className={styles.username}
+								>
+									{currentUser.name}
+								</span>
+								<button 
+									className={styles.logout} 
+									onClick={handleLogout}
+									>
+										Logout
+								</button>
+						</div>
+						) : (
+							<button 
+								className={styles.login} 
+								onClick={() => setPopupOpen(true)}
+							>
+								Log in
+							</button>
+					)}
 
-						{isPopupOpen && <AuthPopup onClose={() => setPopupOpen(false)} />}
-						<Btn className={styles.startBtn}>Get Started</Btn>
-				</div>
+					{isPopupOpen && <AuthPopup onClose={() => setPopupOpen(false)} />}
+
+					<Btn className={styles.startBtn}>Get Started</Btn>
 			</div>
-
 			<DocModal isOpen={isDocModalOpen} onClose={closeDocModal}/>
-		</>
+		</div>
 	);
 }
  

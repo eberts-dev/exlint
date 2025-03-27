@@ -5,31 +5,10 @@
   background-position: bottom;
 }
 
-//дублируется
 .wrapper {
   max-width: 1280px;
   width: calc(100% - 3rem);
-  /* @media (max-width: 1440px) {
-    @include centered-block-desc;
-  }
-  @media (max-width: 1200px) {
-    @include centered-block-pad;
-  }
-  @media (max-width: 560px) {
-    @include centered-block-phone;
-  } */
-}
-
-header {
-  padding: 0 20px;
-}
-
-input {
-  font-size: 21px;
-  width: 420px;
-  border: none;
-  background: none;
-  color: $white;
+  margin: 0 auto;
 }
 
 a {
@@ -103,15 +82,13 @@ input:active {
 }
 
 .console {
-  width: 860px;
-  margin: 0 auto;
   padding: 0 20px;
   padding-bottom: 86px;
 	& .command {
 		display: flex;
     justify-content: center;
 		padding: 17px 30px;
-    max-width: 646px;
+    max-width: 640px;
     margin: 0 auto;
 		align-items: center;
 		border-radius: 10px;
@@ -122,12 +99,11 @@ input:active {
 			color: $white;
 		}
 	}
-  @media (max-width: 560px) {
-    width: 100%;
-  }
 }
 
 .terminal {
+  width: calc(100% - 3rem);
+  font-family: monospace;
   padding: 20px;
   height: 513px;
   border-radius: 5px;
@@ -138,13 +114,14 @@ input:active {
     width: 100%;
     font-size: 20px;
     font-weight: 400;
-    padding-top: 35px;
-    line-height: 130.49%;
+    padding-top: 2rem;
+    line-height: 2rem;
     color: $code-txtColor;
-    & span {
-      color: $red-txt;
-    }
   }
+}
+
+.highlighted {
+  color: $red-txt;
 }
 
 .social {

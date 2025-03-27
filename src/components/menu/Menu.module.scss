@@ -2,13 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1440px;
+  width: calc(100% - 3rem);
   margin: 0 auto;
   padding: 20px 0;
   column-gap: 20px;
-  @media (max-width: 1440px) {
-    @include centered-block-pad;
-  }
 }
 
 .logo {
@@ -75,6 +72,10 @@
   background: none;
   padding-right: 16px;
   color: $main-txt;
+  &:hover {
+    transition: .2s;
+    color: $main-btn;
+  }
 }
 
 .doc,
