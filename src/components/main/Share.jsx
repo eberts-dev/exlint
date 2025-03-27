@@ -1,5 +1,4 @@
 import screen from '@assets/img/git.jpg'
-import Ide from '@components/ide/Ide'
 import styles from './Share.module.scss'
 
 const Share = () => {
@@ -14,7 +13,7 @@ const Share = () => {
 			
 					<div className={`${styles.blocks} ${styles['mobile-managers']}`}>
 						<div className={styles.errors}>
-						<Ide/>
+	
 							{/* <code>
 								<div className={styles.code}>
 									<p className={ide.rose}>--- Stylelint output ---</p>
