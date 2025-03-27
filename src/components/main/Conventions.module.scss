@@ -1,23 +1,9 @@
-//дублируется
 .wrapper {
-  @media (max-width: 1440px) {
-    @include centered-block-desc;
-  }
-  @media (max-width: 1200px) {
-    @include centered-block-pad;
-  }
-  @media (max-width: 560px) {
-    @include centered-block-phone;
-  }
+  width: calc(100% - 3rem);
+  margin: 0 auto;
 }
 
-.stylelint {
-  padding-bottom: 192px;
-}
-
-.repo {
-  z-index: 99;
-  position: relative;
+.blur {
   background-size: cover;
   background-position: 100% 81%;
   background: url('@assets/img/shadow.svg') no-repeat;
@@ -37,13 +23,13 @@
   background-clip: text;
 }
 
-.pic {
+.background {
   position: relative;
 	display: flex;
 	justify-content: center;
 }
 
-.img {
+.dashedLine {
   text-align: center;
   position: relative;
 	max-width: 860px;
@@ -60,37 +46,30 @@
 	}
 	& img {
 		width: 860px;
-		/* @media (max-width: 470px) {} */
 	}
 }
 
 .code {
-  top: 87px;
-  left: auto;
-  width: 334px;
+  font-family: monospace;
+  font-size: 1.1rem;
+  top: 5rem;
+  width: 20rem;
   position: absolute;
-  border-radius: 5px;
+  border-radius: 1rem;
   padding: 31px 24px;
   background: $code-bg;
-  border: 2px solid $shadowC;
   box-shadow: 0px 0px 15px 4px $main-btn;
+  & .added {
+    padding-bottom: 10px;
+    color: $white;
+  }
+  & .highlighted {
+    color: $code-frame;
+  }
 }
 
-.added {
-  font-size: 18px;
-  padding-bottom: 10px;
-  color: $code-gray;
-}
-
-.named {
-  font-size: 18px;
-  color: $white;
-	& span {
-		color: $code-frame;
-	}
-}
-
-.run {
+.runCommand {
+  font-family: monospace;
   width: 260px;
   padding: 17px 0;
   font-size: 20px;
@@ -117,55 +96,10 @@
 	}
 }
 
-.content {
+.ideContent {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 13rem;
   gap: 69px;
-  @media (max-width: 570px) {
-		flex-wrap: wrap;
-	}
-}
-
-.css {
-  padding: 20px;
-  border-radius: 5px;
-  position: relative;
-  background: $code-bg;
-  border: 2.5px solid $main-btn;
-  box-shadow: $shadow;
-	&::before {
-		top: 159px;
-		left: auto;
-		content: '';
-		z-index: -1;
-		width: 83px;
-		height: 12px;
-		right: -83px;
-		position: absolute;
-		background: url("@assets/img/line3.svg") no-repeat;
-	}
-}
-
-.output {
-  padding: 20px;
-  border-radius: 5px;
-  background: $code-bg;
-  border: 2.5px solid $main-btn;
-  box-shadow: $box-s;
-}
-
-.number {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  color: $code-gray;
-  &:last-child {
-    width: 458px;
-    padding-right: 0px;
-  } 
-}
-
-.number-list {
-  position: relative;
 }

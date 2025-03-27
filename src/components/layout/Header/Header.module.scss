@@ -56,12 +56,12 @@ input:active {
   justify-content: center;
   align-items: center;
   column-gap: 30px;
-  margin: 50px 0;
+  margin: 3rem 0;
 }
 
 .text {
   color: $white;
-  font-size: 21px;
+  font-size: 20px;
 }
 
 .start {
@@ -131,7 +131,4 @@ input:active {
   cursor: pointer;
   position: relative;
   background: url('@assets/icons/copy-btn.svg') center no-repeat;
-  @media (max-width: 470px) {
-    right: 16px;
-  }
 }

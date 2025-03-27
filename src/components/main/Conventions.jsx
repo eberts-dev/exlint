@@ -1,5 +1,5 @@
-import Ide from '../ide/Ide'
-import IdeOutput from '../ide/IdeOutput'
+import Ide from '@components/ide/Ide'
+import Stylelint from '@components/ide/Stylelint'
 
 import styles from './Conventions.module.scss'
 
@@ -7,36 +7,61 @@ import repoImage from '@assets/img/repo.png'
 
 
 const Conventions = () => {
-	return (
-		<div className={styles.repo}>
-			<div className={styles.wrapper}>
-				<h2 className={styles.title}>Say goodbye to messy multi-repo coding conventions.</h2>
 
-				<div className={styles.pic}>
-					<div className={styles.img}>
-						<img src={repoImage} alt="multi-repo"></img>
+	const titles = [
+		"Say goodbye to messy multi-repo coding conventions."
+	]
+
+	const ruleAddedContent = [
+		{
+			type: 'added',
+			text: 'Rule Added:'
+		},
+		{
+			type: 'named',
+			text: "'color-named': [",
+			highlight: "'never'",
+			afterHighlight: ']'
+		},
+		{
+			type: 'run',
+			text: '$ exlint run',
+		}
+	]
+
+	return (
+		<div className={styles.blur}>
+			<div className={styles.wrapper}>
+
+				<h2 className={styles.title}>{titles}</h2>
+
+				<div className={styles.background}>
+					<div className={styles.dashedLine}>
+						<img src={repoImage} alt="multi-repo"/>
 					</div>
 					
 					<div className={styles.code}>
-						<code>
-							<p className={styles.added}>Rule Added:</p>
-							<p className={styles.named}>'color-named': [<span>'never'</span>]</p>
-						</code>
+						{ruleAddedContent.map((item, index) => (
+							<p key={index} className={styles.added}>
+								{item.text}
+								{item.highlight && (
+									<span className={styles.highlighted}>{item.highlight}</span>
+								)}
+								{item.afterHighlight}
+							</p>
+						))}
 					</div>
 				</div>
 
-				<div className={styles.run}>
-					<code>$ exlint run</code>
+				<div className={styles.runCommand}>
+					{ruleAddedContent.find(item => item.type === 'run')?.text}
 				</div>
 
-				<div className={styles.stylelint}>
-					<div className={styles.wrapper}>
-						<div className={styles.content}>
-							<div className={styles.css}><Ide/></div>
-							<div className={styles.output}><IdeOutput/></div>
-						</div>
-					</div>
+				<div className={styles.ideContent}>
+					<Ide/>
+					<Stylelint/>
 				</div>
+	
 			</div>
 		</div>
 	 );

@@ -31,3 +31,23 @@
 .gray {
   color: $code-gray;
 }
+
+.output {
+  padding: 2rem;
+  border-radius: 5px;
+  background: $code-bg;
+  border: 2.5px solid $main-btn;
+  box-shadow: $box-s;
+  position: relative;
+  &::before {
+		top: 159px;
+		left: auto;
+		content: '';
+		z-index: -1;
+		width: 83px;
+		height: 12px;
+		right: -83px;
+		position: absolute;
+		background: url("@assets/img/line3.svg") no-repeat;
+	}
+}
