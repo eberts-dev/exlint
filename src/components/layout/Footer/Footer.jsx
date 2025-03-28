@@ -5,7 +5,7 @@ import { MENU_ITEMS } from '@/config/menuConfig'
 import AuthPopup from '@components/menu/auth/AuthPopup'
 import DocModal from '@components/modal/DocModal'
 
-import Btn from '@components/UI/Btn'
+import Btn from '@components/ui/Btn'
 
 import logo from '@assets/img/exlint-logo.svg'
 import stylesBtn from '@components/menu/Menu.module.scss'
