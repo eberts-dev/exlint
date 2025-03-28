@@ -4,7 +4,7 @@ import AskedQuestions from '@components/main/AskedQuestions'
 import BestPractices from '@components/main/BestPractices'
 import Conventions from '@components/main/Conventions'
 import Quality from '@components/main/Quality'
-import Share from '@components/main/Share'
+import ShareConventions from '@components/main/ShareConventions'
 import Sprite from '@components/Sprite'
 
 import React from 'react'
@@ -16,7 +16,7 @@ function App() {
     <Sprite/>
     <Header />
     <Conventions/>
-    <Share/>
+    <ShareConventions/>
     <BestPractices/>
     <Quality/>
     <AskedQuestions/>

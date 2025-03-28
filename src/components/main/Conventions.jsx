@@ -9,7 +9,7 @@ import repoImage from '@assets/img/repo.png'
 const Conventions = () => {
 
 	const titles = [
-		"Say goodbye to messy multi-repo coding conventions."
+		"Say goodbye to messy \nmulti-repo coding conventions."
 	]
 
 	const ruleAddedContent = [
@@ -80,9 +80,7 @@ const Conventions = () => {
 				<h2 className={styles.title}>{titles}</h2>
 
 				<div className={styles.background}>
-					<div className={styles.dashedLine}>
-						<img src={repoImage} alt="multi-repo"/>
-					</div>
+					<img className={styles.dashedLine} src={repoImage} alt="multi-repo"/>
 					
 					<div className={styles.code}>
 						{ruleAddedContent.map((item, index) => (
