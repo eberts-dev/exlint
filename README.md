@@ -1,7 +1,5 @@
 # exlint - react project
 
-https://exlint.vercel.app/
-
 Структура проекта (кратко)
 
 ```
@@ -29,3 +27,7 @@ src/
 └── vite.config.js        # конфиг алиасов под проект
 
 ```
+
+(адаптив в разработке)
+
+https://exlint.vercel.app/
