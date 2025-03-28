@@ -6,6 +6,7 @@
   border: 2.5px solid $main-btn;
   box-shadow: $box-s;
   position: relative;
+  font-size: 1rem;
   &::before {
 		top: 159px;
 		left: auto;
@@ -21,6 +22,7 @@
 
 .stylelint {
   padding: 2rem;
+  font-size: 1rem;
   border-radius: 5px;
   background: $code-bg;
   border: 2.5px solid $main-btn;
