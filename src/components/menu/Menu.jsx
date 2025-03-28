@@ -15,6 +15,10 @@ const Menu = () => {
 	const { isAuthenticated, currentUser, isPopupOpen, handleLogout, setPopupOpen } = useAuth();
 	const { isModalOpen: isDocModalOpen, openModal: openDocModal, closeModal: closeDocModal} = useModal();
 
+	const heroContent = [
+		"Get Started"
+	]
+
 	const getMenuItemProps = (item) => {
 		if (item.modal) {
 			return {
@@ -78,7 +82,7 @@ const Menu = () => {
 
 					{isPopupOpen && <AuthPopup onClose={() => setPopupOpen(false)} />}
 
-					<Btn className={styles.startBtn}>Get Started</Btn>
+					<Btn className={styles.startBtn}>{heroContent}</Btn>
 			</div>
 			<DocModal isOpen={isDocModalOpen} onClose={closeDocModal}/>
 		</div>

@@ -2,10 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: calc(100% - 3rem);
   margin: 0 auto;
   padding: 20px 0;
   column-gap: 20px;
+  @media (max-width: 760px) {
+    flex-direction: column;
+    gap: 4rem;
+  }
 }
 
 .logo {
@@ -13,7 +16,7 @@
 }
 
 .startBtn {
-  width: 10rem;
+  width: 100%;
   border-radius: 10rem;
 }
 
@@ -34,21 +37,28 @@
   align-items: center;
   gap: 0.2rem;
   padding: 0 40px;
-  @media (max-width: 700px) {
-    flex-direction: column;
-    gap: 10px;
-  }
 }
 
 .buttons {
   display: flex;
+  width: calc(100% - 1rem);
+  justify-content: flex-end;
   align-items: center;
-  flex-direction: row;
   column-gap: 1.5rem;
-  @media (max-width: 550px) {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  @media (max-width: 960px) {
+    justify-content: center;
+  }
+}
+
+.startBtn {
+  width: 200px;
+  border-radius: 1rem;
+  display: inline;
+  @media (max-width: 990px) {
+    display: none;
+  }
+  @media (max-width: 760px) {
+    display: block;
   }
 }
 
@@ -63,18 +73,33 @@
   background: $main-btn;
 }
 
-.login,
-.logout {
-  cursor: pointer;
-  font-size: 16px;
-  padding-left: 0;
-  font-weight: 500;
+.login {
   background: none;
-  padding-right: 16px;
+  font-size: 1rem;
   color: $main-txt;
   &:hover {
     transition: .2s;
     color: $main-btn;
+  }
+  @media (max-width: 980px) {
+    width: 70px;
+  }
+}
+
+
+.logout {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  background: none;
+  color: $main-txt;
+  &:hover {
+    transition: .2s;
+    color: $main-btn;
+  }
+  @media (max-width: 560px) {
+    padding: 0;
+    width: 100%;
   }
 }
 

@@ -12,6 +12,7 @@
 }
 
 .content {
+	width: calc(100% - 10rem);
 	max-width: 500px;
 	display: flex;
 	flex-direction: column;
@@ -28,6 +29,7 @@
 		display: inline-block;
 		color: $main-btn;
 		padding: 15px;
+		width: 100%;
     border-radius: 5px;
     border: 1px solid $main-btn;
 		font-family: monospace;
@@ -79,6 +81,7 @@
 }
 
 .info {
+	width: 100%;
 	color: $main-btn;
 	font-size: 18px;
 	text-align: left;

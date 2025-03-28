@@ -12,6 +12,9 @@
   justify-content: center;
   gap: 96px;
   padding-bottom: 33px;
+  @media (max-width: 760px) {
+    flex-direction: column;
+  }
 }
 
 .headline {
