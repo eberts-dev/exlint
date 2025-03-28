@@ -1,0 +1,65 @@
+.output {
+  font-family: monospace;
+  padding: 2rem;
+  border-radius: 5px;
+  background: $code-bg;
+  border: 2.5px solid $main-btn;
+  box-shadow: $box-s;
+  position: relative;
+  font-size: 1rem;
+  &::before {
+		top: 159px;
+		left: auto;
+		content: '';
+		z-index: -1;
+		width: 83px;
+		height: 12px;
+		right: -83px;
+		position: absolute;
+		background: url("@assets/img/line3.svg") no-repeat;
+	}
+}
+
+.stylelint {
+  padding: 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  background: $code-bg;
+  border: 2.5px solid $main-btn;
+  box-shadow: $box-s;
+	font-family: monospace;
+}
+
+.number {
+  color: $code-gray;
+}
+
+.purple {
+  padding-left: 40px;
+  color: $code-color;
+}
+
+.rose {
+  padding-bottom: 20px;
+  color: $code-tag;
+}
+
+.hot {
+  color: $code-red;
+}
+
+.gelb {
+  color: $code-class;
+}
+
+.red {
+  color: $red-txt;
+}
+
+.white {
+  color: $white;
+}
+
+.gray {
+  color: $code-gray;
+}
