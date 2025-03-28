@@ -1,4 +1,4 @@
-import styles from './CodeBock.module.scss'
+import styles from './CodeOutput.module.scss'
 
 const CodeBlock = ({ lines }) => {
 	return (

@@ -1,4 +1,5 @@
 import CodeBlock from '@components/ide/CodeBlock'
+import StylelintBlock from '@components/ide/StylelintBlock'
 
 import styles from './Conventions.module.scss'
 
@@ -47,18 +48,29 @@ const Conventions = () => {
 
 	const stylelintLines = [
 
-		{txt: '--- Stylelint output ---', cls: 'rose'},
-		{txt: 'format.css', cls: 'white'},
+		{cls: 'rose', txt: '--- Stylelint output ---'},
+		{cls: 'white', txt: 'format.css'},
 
 		{
 			isSpecial: true, 
 			parts: [
 				{cls: 'gray outline', txt: '2:20 ✖ '}, 
-				{cls: 'white', txt: 'Unexpected named color "black"'}]
+				{cls: 'white', txt: 'Unexpected named color "black"'},
+			]
 		},
-		
-		{txt: 'color-named', cls: 'gray'},
-		{txt: '4 problems (4 errors, 0 warnings)', cls: 'white'}
+		{cls: 'gray', txt: 'color-named'},
+
+		{ isSpecial: true, 
+			parts: [
+				{cls: 'gray outline', txt: '12:9 ✖'},
+				{cls: 'gray outline', txt: '13:9 ✖'},
+			]
+		},
+		{cls: 'gray', txt: 'color-named'},
+
+		{isLineBreak: true},
+
+		{cls: 'white', txt: '4 problems (4 errors, 0 warnings)', }
 	]
 
 	return (
