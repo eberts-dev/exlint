@@ -1,5 +1,7 @@
 # exlint - react project
 
+https://exlint.vercel.app/
+
 Структура проекта (кратко)
 
 ```
