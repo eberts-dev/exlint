@@ -1,7 +1,6 @@
 import { MENU_ITEMS } from '@/config/menuConfig'
 import { useAuth } from '@/hooks/useAuth'
 import { useModal } from '@/hooks/useModal'
-
 import DocModal from '@components/modal/DocModal'
 import Btn from '@ui/Btn/Btn'
 import AuthPopup from './auth/AuthPopup'
@@ -10,16 +9,23 @@ import styles from './Menu.module.scss'
 
 import logo from '@assets/img/exlint-logo.svg'
 
-const Menu = () => {
+const Menu = ({ scrollToConsole }) => {
+	const heroContent = ['Get Started']
 
-	const { isAuthenticated, currentUser, isPopupOpen, handleLogout, setPopupOpen } = useAuth();
-	const { isModalOpen: isDocModalOpen, openModal: openDocModal, closeModal: closeDocModal} = useModal();
+	const {
+		isAuthenticated,
+		currentUser,
+		isPopupOpen,
+		handleLogout,
+		setPopupOpen,
+	} = useAuth()
+	const {
+		isModalOpen: isDocModalOpen,
+		openModal: openDocModal,
+		closeModal: closeDocModal,
+	} = useModal()
 
-	const heroContent = [
-		"Get Started"
-	]
-
-	const getMenuItemProps = (item) => {
+	const getMenuItemProps = item => {
 		if (item.modal) {
 			return {
 				onClick: openDocModal,
@@ -35,58 +41,47 @@ const Menu = () => {
 		}
 	}
 
-	return ( 
+	return (
 		<div className={styles.exlint}>
-			<img className={styles.logo} src={logo} alt="exlint"/>
-	
+			<img className={styles.logo} src={logo} alt='exlint' />
+
 			<ul className={styles.list}>
-				{Object.values(MENU_ITEMS).map((item) => (
+				{Object.values(MENU_ITEMS).map(item => (
 					<li key={item.id}>
 						{item.href ? (
-							<a {...getMenuItemProps(item)}>
-								{item.label}
-							</a>
+							<a {...getMenuItemProps(item)}>{item.label}</a>
 						) : (
-							<button type="button" {...getMenuItemProps(item)}>
+							<button type='button' {...getMenuItemProps(item)}>
 								{item.label}
 							</button>
 						)}
 					</li>
 				))}
 			</ul>
-		
+
 			<div className={styles.buttons}>
-					{isAuthenticated ? (
-						<div 
-							className={styles.userSection}
-							>
-								<span className={styles.username}
-								>
-									{currentUser.name}
-								</span>
-								<button 
-									className={styles.logout} 
-									onClick={handleLogout}
-									>
-										Logout
-								</button>
-						</div>
-						) : (
-							<button 
-								className={styles.login} 
-								onClick={() => setPopupOpen(true)}
-							>
-								Log in
-							</button>
-					)}
+				{isAuthenticated ? (
+					<div className={styles.userSection}>
+						<span className={styles.username}>{currentUser.name}</span>
+						<button className={styles.logout} onClick={handleLogout}>
+							Logout
+						</button>
+					</div>
+				) : (
+					<button className={styles.login} onClick={() => setPopupOpen(true)}>
+						Log in
+					</button>
+				)}
 
-					{isPopupOpen && <AuthPopup onClose={() => setPopupOpen(false)} />}
+				{isPopupOpen && <AuthPopup onClose={() => setPopupOpen(false)} />}
 
-					<Btn className={styles.startBtn}>{heroContent}</Btn>
+				<Btn className={styles.startBtn} onClick={scrollToConsole}>
+					{heroContent}
+				</Btn>
 			</div>
-			<DocModal isOpen={isDocModalOpen} onClose={closeDocModal}/>
+			<DocModal isOpen={isDocModalOpen} onClose={closeDocModal} />
 		</div>
-	);
+	)
 }
- 
-export default Menu;
+
+export default Menu

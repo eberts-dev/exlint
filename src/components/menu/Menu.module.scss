@@ -1,128 +1,129 @@
 .exlint {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 20px 0;
-  column-gap: 20px;
-  @media (max-width: 760px) {
-    flex-direction: column;
-    gap: 4rem;
-  }
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: 20px 0;
+	column-gap: 20px;
+	@media (max-width: 760px) {
+		flex-direction: column;
+		gap: 4rem;
+	}
 }
 
 .logo {
-  width: 10rem;
+	width: 10rem;
 }
 
 .startBtn {
-  width: 100%;
-  border-radius: 10rem;
+	width: 100%;
+	border-radius: 10rem;
 }
 
 .username {
-  color: $white;
-  font-size: 1em;
-  display: inline-block;
-  padding: 0.5em 1em;
-  background: $code-bg;
-  border-radius: 1em;
-  border: 0.2em solid $main-btn;
-  width: 100%;
-  text-align: center;
+	color: $white;
+	font-size: 1em;
+	display: inline-block;
+	padding: 0.5em 1em;
+	background: $code-bg;
+	border-radius: 1em;
+	border: 0.2em solid $main-btn;
+	width: 100%;
+	text-align: center;
 }
 
-.list { 
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-  padding: 0 40px;
+.list {
+	display: flex;
+	align-items: center;
+	gap: 0.2rem;
+	padding: 0 40px;
 }
 
 .buttons {
-  display: flex;
-  width: calc(100% - 1rem);
-  justify-content: flex-end;
-  align-items: center;
-  column-gap: 1.5rem;
-  @media (max-width: 960px) {
-    justify-content: center;
-  }
+	display: flex;
+	width: calc(100% - 1rem);
+	justify-content: flex-end;
+	align-items: center;
+	column-gap: 1.5rem;
+	cursor: pointer;
+	@media (max-width: 960px) {
+		justify-content: center;
+	}
 }
 
 .startBtn {
-  width: 200px;
-  border-radius: 1rem;
-  display: inline;
-  @media (max-width: 990px) {
-    display: none;
-  }
-  @media (max-width: 760px) {
-    display: block;
-  }
+	width: 200px;
+	border-radius: 1rem;
+	display: inline;
+	@media (max-width: 990px) {
+		display: none;
+	}
+	@media (max-width: 760px) {
+		display: block;
+	}
 }
 
 .start {
-  width: 130px;
-  padding: 9px 0;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 500;
-  border-radius: 30px;
-  color: $white;
-  background: $main-btn;
+	width: 130px;
+	padding: 9px 0;
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: 500;
+	border-radius: 30px;
+	color: $white;
+	background: $main-btn;
 }
 
 .login {
-  background: none;
-  font-size: 1rem;
-  color: $main-txt;
-  &:hover {
-    transition: .2s;
-    color: $main-btn;
-  }
-  @media (max-width: 980px) {
-    width: 70px;
-  }
+	background: none;
+	font-size: 1rem;
+	color: $main-txt;
+	&:hover {
+		transition: 0.2s;
+		color: $main-btn;
+		cursor: pointer;
+	}
+	@media (max-width: 980px) {
+		width: 70px;
+	}
 }
 
-
 .logout {
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 500;
-  background: none;
-  color: $main-txt;
-  &:hover {
-    transition: .2s;
-    color: $main-btn;
-  }
-  @media (max-width: 560px) {
-    padding: 0;
-    width: 100%;
-  }
+	cursor: pointer;
+	font-size: 1rem;
+	font-weight: 500;
+	background: none;
+	color: $main-txt;
+	&:hover {
+		transition: 0.2s;
+		color: $main-btn;
+	}
+	@media (max-width: 560px) {
+		padding: 0;
+		width: 100%;
+	}
 }
 
 .doc,
 .git,
 .discord {
-  font-size: 16px;
+	font-size: 16px;
 }
 
 .doc {
-  position: relative;
-  background: none;
-  color: $white;
-  &:hover {
-    cursor: pointer;
-  }
-  &::before {
+	position: relative;
+	background: none;
+	color: $white;
+	&:hover {
+		cursor: pointer;
+	}
+	&::before {
 		content: '';
 		right: auto;
-    top: -8px;
-    left: -36px;
-    width: 25px;
-    height: 31px;
+		top: -8px;
+		left: -36px;
+		width: 25px;
+		height: 31px;
 		position: absolute;
 		background-size: contain;
 		background: url('@assets/icons/docs.svg') center no-repeat;
@@ -130,10 +131,10 @@
 }
 
 .discord {
-  position: relative;
+	position: relative;
 	&::before {
 		content: '';
-    position: absolute;
+		position: absolute;
 		right: auto;
 		width: 28px;
 		left: -35px;
@@ -144,9 +145,9 @@
 }
 
 .git {
-  position: relative;
-  display: inline-block;
-  padding: 0 61px 0 53px;
+	position: relative;
+	display: inline-block;
+	padding: 0 61px 0 53px;
 	&::before {
 		content: '';
 		left: 25px;
@@ -160,6 +161,6 @@
 }
 
 .userSection {
-  display: flex;
-  gap: 1em;
+	display: flex;
+	gap: 1em;
 }
