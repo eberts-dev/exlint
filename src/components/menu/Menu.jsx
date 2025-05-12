@@ -5,11 +5,10 @@ import DocModal from '@components/modal/DocModal'
 import Btn from '@ui/Btn/Btn'
 import AuthPopup from './auth/AuthPopup'
 
+import logo from '@assets/img/exlint-logo.svg'
 import styles from './Menu.module.scss'
 
-import logo from '@assets/img/exlint-logo.svg'
-
-const Menu = ({ scrollToConsole }) => {
+const Menu = ({ onScrollToConsole }) => {
 	const heroContent = ['Get Started']
 
 	const {
@@ -38,6 +37,12 @@ const Menu = ({ scrollToConsole }) => {
 			target: item.target,
 			rel: item.rel,
 			className: styles[item.className],
+		}
+	}
+
+	const handleStartClick = () => {
+		if (onScrollToConsole) {
+			onScrollToConsole()
 		}
 	}
 
@@ -75,7 +80,7 @@ const Menu = ({ scrollToConsole }) => {
 
 				{isPopupOpen && <AuthPopup onClose={() => setPopupOpen(false)} />}
 
-				<Btn className={styles.startBtn} onClick={scrollToConsole}>
+				<Btn className={styles.startBtn} onClick={handleStartClick}>
 					{heroContent}
 				</Btn>
 			</div>

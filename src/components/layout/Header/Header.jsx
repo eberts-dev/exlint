@@ -1,3 +1,4 @@
+import Conventions from '@components/main/Conventions'
 import Menu from '@components/menu/Menu'
 import Btn from '@ui/Btn/Btn'
 import CopyableInput from '@ui/CopyableInput'
@@ -7,8 +8,37 @@ import styles from './Header.module.scss'
 
 const Header = () => {
 	const consoleRef = useRef(null)
-	const installCommand = 'npm install --global @exlint.io/cli'
+	const conventionsRef = useRef(null)
 
+	const handlesScrollToConsole = () => {
+		if (consoleRef.current) {
+			const yOffset = -32
+			const y =
+				consoleRef.current.getBoundingClientRect().top +
+				window.pageYOffset +
+				yOffset
+			window.scrollTo({
+				top: y,
+				behavior: 'smooth',
+			})
+		}
+	}
+
+	const handleScrollToConventions = () => {
+		if (conventionsRef.current) {
+			const yOffset = -32
+			const y =
+				conventionsRef.current.getBoundingClientRect().top +
+				window.pageYOffset +
+				yOffset
+			window.scrollTo({
+				top: y,
+				behavior: 'smooth',
+			})
+		}
+	}
+
+	const installCommand = 'npm install --global @exlint.io/cli'
 	const heroContent = {
 		title: {
 			l1: 'Empower Best Practices',
@@ -17,7 +47,6 @@ const Header = () => {
 		description: 'Keep your projects clean with Exlint.',
 		btnText: 'Quick Start',
 	}
-
 	const terminalContent = {
 		lines: [
 			{
@@ -41,67 +70,57 @@ const Header = () => {
 	}
 
 	return (
-		<header className={styles.stars}>
-			<div className={styles.wrapper}>
-				<Menu
-					scrollToConsole={() => {
-						if (consoleRef.current) {
-							const yOffset = -32
-							const y =
-								consoleRef.current.getBoundingClientRect().top +
-								window.pageYOffset +
-								yOffset
-							window.scrollTo({
-								top: y,
-								behavior: 'smooth',
-							})
-						}
-					}}
-				/>
+		<>
+			<header className={styles.stars}>
+				<div className={styles.wrapper}>
+					<Menu onScrollToConsole={handlesScrollToConsole} />
+					<h1 className={styles.title}>
+						{heroContent.title.l1}
+						<br />
+						<span>{heroContent.title.l2}</span>
+					</h1>
 
-				<h1 className={styles.title}>
-					{heroContent.title.l1}
-					<br />
-					<span>{heroContent.title.l2}</span>
-				</h1>
+					<div className={styles.console} ref={consoleRef}>
+						<CopyableInput
+							value={installCommand}
+							inputId='exlint-install-command'
+							ariaLabel='Exlint installation command'
+							className={styles.command}
+						/>
 
-				<div className={styles.console} ref={consoleRef}>
-					<CopyableInput
-						value={installCommand}
-						inputId='exlint-install-command'
-						ariaLabel='Exlint installation command'
-						className={styles.command}
-					/>
+						<div className={styles.qstart}>
+							<Btn onClick={handleScrollToConventions} className={styles.btn}>
+								{heroContent.btnText}
+							</Btn>
+							<p className={styles.text}>{heroContent.description}</p>
+						</div>
 
-					<div className={styles.qstart}>
-						<Btn className={styles.btn}>{heroContent.btnText}</Btn>
-						<p className={styles.text}>{heroContent.description}</p>
-					</div>
+						<div className={styles.terminal}>
+							{terminalContent.lines.map((line, lineIndex) => (
+								<p key={lineIndex} className={styles.terminal__text}>
+									{line.prefix}
+									{line.parts.map((part, partIndex) => {
+										const isHighlighted =
+											line.highlightLast && partIndex === line.parts.length - 1
 
-					<div className={styles.terminal}>
-						{terminalContent.lines.map((line, lineIndex) => (
-							<p key={lineIndex} className={styles.terminal__text}>
-								{line.prefix}
-								{line.parts.map((part, partIndex) => {
-									const isHighlighted =
-										line.highlightLast && partIndex === line.parts.length - 1
-
-									return (
-										<span
-											key={partIndex}
-											className={isHighlighted ? styles.highlighted : ''}
-										>
-											{part}
-											<br />
-										</span>
-									)
-								})}
-							</p>
-						))}
+										return (
+											<span
+												key={partIndex}
+												className={isHighlighted ? styles.highlighted : ''}
+											>
+												{part}
+												<br />
+											</span>
+										)
+									})}
+								</p>
+							))}
+						</div>
 					</div>
 				</div>
-			</div>
-		</header>
+			</header>
+			<Conventions ref={conventionsRef} />
+		</>
 	)
 }
 
