@@ -11,10 +11,11 @@ export default defineConfig({
 			'@': path.resolve(__dirname, './src'),
 			'@assets': path.resolve(__dirname, './src/assets'),
 			'@components': path.resolve(__dirname, './src/components'),
-			'@contexts': path.resolve(__dirname, './src/contexts'),
+			'@hooks': path.resolve(__dirname, './src/hooks'),
 			'@ui': path.resolve(__dirname, './src/components/ui'),
 			'@features': path.resolve(__dirname, './src/features'),
 			'@styles': path.resolve(__dirname, './src/styles'),
+			'@utils': path.resolve(__dirname, './src/utils'),
 		},
 	},
 	css: {

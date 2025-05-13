@@ -1,42 +1,16 @@
+import { useScroll } from '@/hooks/useScroll'
+import { consoleRef, conventionsRef } from '@/utils/scrollRefs'
+
 import Conventions from '@components/main/Conventions'
 import Menu from '@components/menu/Menu'
 import Btn from '@ui/Btn/Btn'
 import CopyableInput from '@ui/CopyableInput'
-import { useRef } from 'react'
 
 import styles from './Header.module.scss'
 
 const Header = () => {
-	const consoleRef = useRef(null)
-	const conventionsRef = useRef(null)
-
-	const handlesScrollToConsole = () => {
-		if (consoleRef.current) {
-			const yOffset = -32
-			const y =
-				consoleRef.current.getBoundingClientRect().top +
-				window.pageYOffset +
-				yOffset
-			window.scrollTo({
-				top: y,
-				behavior: 'smooth',
-			})
-		}
-	}
-
-	const handleScrollToConventions = () => {
-		if (conventionsRef.current) {
-			const yOffset = -32
-			const y =
-				conventionsRef.current.getBoundingClientRect().top +
-				window.pageYOffset +
-				yOffset
-			window.scrollTo({
-				top: y,
-				behavior: 'smooth',
-			})
-		}
-	}
+	const handleScrollToConsole = useScroll(consoleRef)
+	const handleScrollToConventions = useScroll(conventionsRef)
 
 	const installCommand = 'npm install --global @exlint.io/cli'
 	const heroContent = {
@@ -73,7 +47,7 @@ const Header = () => {
 		<>
 			<header className={styles.stars}>
 				<div className={styles.wrapper}>
-					<Menu onScrollToConsole={handlesScrollToConsole} />
+					<Menu onScrollToConsole={handleScrollToConsole} />
 					<h1 className={styles.title}>
 						{heroContent.title.l1}
 						<br />
