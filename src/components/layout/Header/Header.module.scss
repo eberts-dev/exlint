@@ -64,10 +64,6 @@ input {
 		font-size: 3rem;
 	}
 
-	@include mobile {
-		margin: 0 auto;
-	}
-
 	& span {
 		&:first-child {
 			color: $white;
