@@ -7,4 +7,9 @@
 	color: $white;
 	border-radius: 10px;
 	background: $main-btn;
+
+	@include mobile {
+		@include flex-center;
+		width: 100%;
+	}
 }

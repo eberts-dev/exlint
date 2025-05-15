@@ -1,36 +1,52 @@
-$body: #1B1A29;
-$page: #14131B;
-$white: #DCDAE7;
-$red-txt: #F21212;
-$main-txt: #FEFEFE;
+$body: #1b1a29;
+$page: #14131b;
+$white: #dcdae7;
+$red-txt: #f21212;
+$main-txt: #fefefe;
 $footer-txt: #727272;
-$border: #4B4A65;
-$main-btn: #7A4DF3;
-$list: #BBB8CA;
+$border: #4b4a65;
+$main-btn: #7a4df3;
+$list: #bbb8ca;
 $tooltip-bg: #333;
 
-$code-bg:#242337;
-$code-border: rgba(83, 58, 185, 0.50);
-$code-txtColor: #E7E7E7;
-$code-border-pink: #DC6794;
-$code-gray: #9B9B9B;
-$code-fragment: #DC6794;
-$code-tag: #FF5B5B;
-$code-red: #FF0000;
-$code-class: #FFF500;
-$code-color: #8C98FF;
-$code-frame: #CD7BFF;
+$scrollbar-track: rgba(255, 255, 255, 0.1);
+$scrollbar-thumb: rgba(255, 255, 255, 0.3);
+$scrollbar-thumb-hover: rgba(255, 255, 255, 0.4);
 
-$shadow: 0px 1px 37px 0px rgba(151, 71, 255, 0.70);
-$shadowC: 0px 1px 11px 0px rgba(122, 77, 243, 0.80);
-$box: 0px -2px 28px 0px rgba(151, 71, 255, 0.30);
-$box-s: 0px 0px 43px 0px rgba(151, 71, 255, 0.50);
-$mobile-box: rgba(83, 58, 185, 0.10);
+$code-bg: #242337;
+$code-border: rgba(83, 58, 185, 0.5);
+$code-txtColor: #e7e7e7;
+$code-border-pink: #dc6794;
+$code-gray: #9b9b9b;
+$code-fragment: #dc6794;
+$code-tag: #ff5b5b;
+$code-red: #ff0000;
+$code-class: #fff500;
+$code-color: #8c98ff;
+$code-frame: #cd7bff;
 
-  /* code-gradient */
-  $text-gradient: linear-gradient(263deg, #DC6794 6%, #9747FF 78%, #9747FF);
-  $share-text-gradient: linear-gradient(75deg, #8247FF 11%, #E7E7E6 52.49%);
-  $h2-gradient: linear-gradient(150deg, #FCFCFC 6%, #9747FF 78%, #9747FF);
-  $p-gradient: linear-gradient(270deg, #AE72FF 77.92%, #F2F2F2 93.75%);
-  $step1-gradient: linear-gradient(223deg, rgb(174 125 253 / 50%) 0%,  rgb(36 35 55 / 55%) 42.19%, rgb(36 35 55 / 93%) 58.33%, rgb(122 77 243 / 39%) 100%);
-  $step2-gradient: linear-gradient(223deg, rgb(174 125 253 / 18%) 0%, rgb(16 15 27 / 74%) 42.19%, rgb(36 35 55 / 93%) 58.33%, rgb(122 77 243 / 40%) 100%);
+$shadow: 0px 1px 37px 0px rgba(151, 71, 255, 0.7);
+$shadowC: 0px 1px 11px 0px rgba(122, 77, 243, 0.8);
+$box: 0px -2px 28px 0px rgba(151, 71, 255, 0.3);
+$box-s: 0px 0px 43px 0px rgba(151, 71, 255, 0.5);
+$mobile-box: rgba(83, 58, 185, 0.1);
+
+/* code-gradient */
+$text-gradient: linear-gradient(263deg, #dc6794 6%, #9747ff 78%, #9747ff);
+$share-text-gradient: linear-gradient(75deg, #8247ff 11%, #e7e7e6 52.49%);
+$h2-gradient: linear-gradient(150deg, #fcfcfc 6%, #9747ff 78%, #9747ff);
+$p-gradient: linear-gradient(270deg, #ae72ff 77.92%, #f2f2f2 93.75%);
+$step1-gradient: linear-gradient(
+	223deg,
+	rgb(174 125 253 / 50%) 0%,
+	rgb(36 35 55 / 55%) 42.19%,
+	rgb(36 35 55 / 93%) 58.33%,
+	rgb(122 77 243 / 39%) 100%
+);
+$step2-gradient: linear-gradient(
+	223deg,
+	rgb(174 125 253 / 18%) 0%,
+	rgb(16 15 27 / 74%) 42.19%,
+	rgb(36 35 55 / 93%) 58.33%,
+	rgb(122 77 243 / 40%) 100%
+);

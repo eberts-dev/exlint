@@ -1,40 +1,43 @@
 .wrapper {
-  width: calc(100% - 3rem);
-  margin: 0 auto;
+	width: calc(100% - 3rem);
+	margin: 0 auto;
 }
 
 .blur {
-  background-size: cover;
-  background-position: 100% 81%;
-  background: url('@assets/img/shadow.svg') no-repeat;
+	background-size: cover;
+	background-position: 100% 81%;
+	background: url('@assets/img/shadow.svg') no-repeat;
 }
 
 .title {
-  font-size: 2.8rem;
-  max-width: 45rem;
-  white-space: pre-wrap; 
-  margin: 0 auto;
-  font-weight: 700;
+	font-size: 2.8rem;
+	max-width: 45rem;
+	white-space: pre-wrap;
+	margin: 0 auto;
+	font-weight: 700;
 	padding: 0 20px;
-  padding-top: 69px;
-  text-align: center;
-  padding-bottom: 64px;
-  background: $h2-gradient;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+	padding: 69px 0 64px 0;
+	text-align: center;
+	background: $h2-gradient;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+
+	@include mobile {
+		font-size: 2.4rem;
+	}
 }
 
 .background {
-  position: relative;
+	position: relative;
 	display: flex;
 	justify-content: center;
 }
 
 .dashedLine {
-  text-align: center;
-  position: relative;
+	text-align: center;
+	position: relative;
 	max-width: 860px;
-  width: 100%;
+	width: 100%;
 	&::before {
 		left: 50%;
 		content: '';
@@ -52,38 +55,48 @@
 }
 
 .code {
-  font-family: monospace;
-  font-size: 1.1rem;
-  top: 5rem;
-  width: 20rem;
-  position: absolute;
-  border-radius: 1rem;
-  padding: 31px 24px;
-  background: $code-bg;
-  box-shadow: 0px 0px 15px 4px $main-btn;
-  & .added {
-    padding-bottom: 10px;
-    color: $white;
-  }
-  & .highlighted {
-    color: $code-frame;
-  }
+	font-family: monospace;
+	font-size: 1.1rem;
+	top: 5rem;
+	width: 20rem;
+	position: absolute;
+	border-radius: 1rem;
+	padding: 31px 24px;
+	background: $code-bg;
+	box-shadow: 0px 0px 15px 4px $main-btn;
+
+	& .added {
+		padding-bottom: 10px;
+		color: $white;
+		@include mobile {
+			font-size: 0.9rem;
+		}
+	}
+
+	& .highlighted {
+		color: $code-frame;
+	}
+
+	@include mobile {
+		width: 13rem;
+	}
 }
 
 .runCommand {
-  font-family: monospace;
-  width: 260px;
-  padding: 17px 0;
-  font-size: 20px;
-  position: relative;
-  text-align: center;
-  border-radius: 5px;
-  margin: 109px auto;
-  margin-bottom: 120px;
-  box-shadow: $box;
-  color: $main-txt;
-  background: $code-bg;
-  border: 2.5px solid $code-fragment;
+	font-family: monospace;
+	width: 260px;
+	padding: 17px 0;
+	font-size: 20px;
+	position: relative;
+	text-align: center;
+	border-radius: 5px;
+	margin: 109px auto;
+	margin-bottom: 120px;
+	box-shadow: $box;
+	color: $main-txt;
+	background: $code-bg;
+	border: 2.5px solid $code-fragment;
+
 	&::before {
 		z-index: -1;
 		right: auto;
@@ -94,14 +107,24 @@
 		bottom: -122px;
 		position: absolute;
 		background-size: contain;
-		background: url("@assets/img/line2.svg") no-repeat;
+		background: url('@assets/img/line2.svg') no-repeat;
+	}
+
+	@include mobile {
+		width: 100%;
+		position: relative;
+		top: 6rem;
 	}
 }
 
 .ideContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 13rem;
-  gap: 69px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 13rem;
+	gap: 69px;
+
+	@include mobile {
+		flex-direction: column;
+	}
 }

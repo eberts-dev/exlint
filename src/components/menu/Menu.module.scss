@@ -5,19 +5,40 @@
 	margin: 0 auto;
 	padding: 20px 0;
 	column-gap: 20px;
-	@media (max-width: 760px) {
+
+	@include tablet {
 		flex-direction: column;
-		gap: 4rem;
+		row-gap: 2em;
+	}
+
+	@include mobile {
+		gap: 3rem;
 	}
 }
 
 .logo {
 	width: 10rem;
+
+	@include mobile {
+		width: 17rem;
+	}
 }
 
 .startBtn {
-	width: 100%;
-	border-radius: 10rem;
+	width: 200px;
+	border-radius: 1rem;
+	display: inline;
+
+	@include desktop {
+		&.startBtn {
+			display: none;
+		}
+	}
+
+	@include tablet {
+		display: block;
+		width: 100%;
+	}
 }
 
 .username {
@@ -30,13 +51,26 @@
 	border: 0.2em solid $main-btn;
 	width: 100%;
 	text-align: center;
+
+	@include mobile {
+		font-size: 0.9em;
+		padding: 0.4em 0.8em;
+	}
 }
 
 .list {
 	display: flex;
 	align-items: center;
-	gap: 0.2rem;
+	gap: 4.5rem;
 	padding: 0 40px;
+
+	@include mobile {
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: flex-start;
+		padding: 0;
+		gap: 1rem;
+	}
 }
 
 .buttons {
@@ -46,20 +80,15 @@
 	align-items: center;
 	column-gap: 1.5rem;
 	cursor: pointer;
-	@media (max-width: 960px) {
+
+	@include desktop {
 		justify-content: center;
 	}
-}
 
-.startBtn {
-	width: 200px;
-	border-radius: 1rem;
-	display: inline;
-	@media (max-width: 990px) {
-		display: none;
-	}
-	@media (max-width: 760px) {
-		display: block;
+	@include mobile {
+		flex-wrap: wrap;
+		font-size: 1.5em;
+		gap: 1rem;
 	}
 }
 
@@ -72,19 +101,39 @@
 	border-radius: 30px;
 	color: $white;
 	background: $main-btn;
+
+	@include mobile {
+		width: 100%;
+	}
 }
 
 .login {
 	background: none;
 	font-size: 1rem;
 	color: $main-txt;
+
 	&:hover {
 		transition: 0.2s;
-		color: $main-btn;
+		color: $page;
 		cursor: pointer;
 	}
-	@media (max-width: 980px) {
+
+	@include desktop {
 		width: 70px;
+	}
+
+	@include tablet {
+		font-size: 1.2rem;
+		width: 7rem;
+		background: $main-btn;
+		color: $white;
+		padding: 9px 0;
+		border-radius: 10px;
+	}
+
+	@include mobile {
+		cursor: pointer;
+		font-weight: 500;
 	}
 }
 
@@ -94,11 +143,13 @@
 	font-weight: 500;
 	background: none;
 	color: $main-txt;
+
 	&:hover {
 		transition: 0.2s;
 		color: $main-btn;
 	}
-	@media (max-width: 560px) {
+
+	@include mobile-small {
 		padding: 0;
 		width: 100%;
 	}
@@ -107,16 +158,18 @@
 .doc,
 .git,
 .discord {
-	font-size: 16px;
+	font-size: 1.2rem;
 }
 
 .doc {
 	position: relative;
 	background: none;
 	color: $white;
+
 	&:hover {
 		cursor: pointer;
 	}
+
 	&::before {
 		content: '';
 		right: auto;
@@ -127,11 +180,18 @@
 		position: absolute;
 		background-size: contain;
 		background: url('@assets/icons/docs.svg') center no-repeat;
+
+		@include mobile {
+			left: -40px;
+			width: 25px;
+			height: 35px;
+		}
 	}
 }
 
 .discord {
 	position: relative;
+
 	&::before {
 		content: '';
 		position: absolute;
@@ -141,26 +201,46 @@
 		height: 20px;
 		background-size: cover;
 		background: url('@assets/icons/discord.svg') center no-repeat;
+
+		@include mobile {
+			left: -40px;
+			width: 24px;
+		}
 	}
 }
 
 .git {
 	position: relative;
 	display: inline-block;
-	padding: 0 61px 0 53px;
+	/* padding: 0 61px 0 53px; */
+
 	&::before {
 		content: '';
-		left: 25px;
+		left: -40px;
 		width: 20px;
 		right: auto;
 		height: 20px;
 		position: absolute;
 		background-size: cover;
 		background: url('@assets/icons/github.svg') center no-repeat;
+
+		@include mobile {
+			width: 23px;
+			height: 20px;
+		}
+
+		@include mobile-small {
+			padding: 0;
+		}
 	}
 }
 
 .userSection {
 	display: flex;
 	gap: 1em;
+
+	@include mobile {
+		flex-direction: column;
+		width: 100%;
+	}
 }
