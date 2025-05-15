@@ -2,12 +2,23 @@
 	position: relative;
 	background: url('@assets/img/stars.png') no-repeat;
 	background-position: bottom;
+	background-size: cover;
+
+	@include mobile {
+		background-size: 200% auto;
+	}
 }
 
 .wrapper {
-	max-width: 1280px;
-	width: calc(100% - 3rem);
-	margin: 0 auto;
+	@include container;
+
+	@include mobile {
+		width: calc(100% - 2rem);
+	}
+
+	@include mobile-small {
+		width: calc(100% - 1.5rem);
+	}
 }
 
 a {
@@ -20,15 +31,25 @@ input {
 	border: none;
 	background: none;
 	color: $white;
-}
 
-input::placeholder {
-	color: $white;
-}
+	@include tablet {
+		width: 100%;
+		max-width: 420px;
+	}
 
-input:focus-visible,
-input:active {
-	outline: none;
+	@include mobile {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	&::placeholder {
+		color: $white;
+	}
+
+	&:focus-visible,
+	&:active {
+		outline: none;
+	}
 }
 
 .title {
@@ -38,15 +59,37 @@ input:active {
 	margin: 64px auto;
 	text-align: center;
 	color: $white;
-	& span:first-child {
-		color: $white;
+
+	@include tablet {
+		font-size: 3rem;
+		margin: 48px auto;
 	}
-	& span:last-child {
-		text-align: center;
-		margin-bottom: 52px;
-		background: $text-gradient;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+
+	@include mobile {
+		font-size: 3rem;
+		margin: 32px auto;
+	}
+
+	@include mobile-small {
+		margin: 24px auto;
+	}
+
+	& span {
+		&:first-child {
+			color: $white;
+		}
+
+		&:last-child {
+			text-align: center;
+			margin-bottom: 52px;
+			background: $text-gradient;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+
+			@include mobile {
+				margin-bottom: 32px;
+			}
+		}
 	}
 }
 

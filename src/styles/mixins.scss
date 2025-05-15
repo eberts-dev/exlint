@@ -1,14 +1,73 @@
+$mobile-small: 320px;
+$mobile: 375px;
+$tablet: 768px;
+$desktop: 1024px;
+$desktop-large: 1440px;
+
 @mixin centered-block-desc($width: 1440px) {
-  width: $width;
-  margin: 0 auto;
+	width: $width;
+	margin: 0 auto;
 }
 
 @mixin centered-block-pad($width: 930px) {
-  width: $width;
-  margin: 0 auto;
+	width: $width;
+	margin: 0 auto;
 }
 
 @mixin centered-block-phone($width: 440px) {
-  width: $width;
-  margin: 0 auto;
+	width: $width;
+	margin: 0 auto;
+}
+
+// Media query mixins
+@mixin mobile-small {
+	@media (max-width: #{$mobile-small}) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (max-width: #{$mobile}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: #{$tablet}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (max-width: #{$desktop}) {
+		@content;
+	}
+}
+
+// Flexbox mixins
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+// Container mixin
+@mixin container {
+	width: 100%;
+	max-width: $desktop-large;
+	margin: 0 auto;
+	padding: 0 15px;
+
+	@include tablet {
+		padding: 0 20px;
+	}
+
+	@include mobile {
+		padding: 0 15px;
+	}
 }
