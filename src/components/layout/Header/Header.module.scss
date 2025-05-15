@@ -62,16 +62,10 @@ input {
 
 	@include tablet {
 		font-size: 3rem;
-		margin: 48px auto;
 	}
 
 	@include mobile {
-		font-size: 3rem;
-		margin: 32px auto;
-	}
-
-	@include mobile-small {
-		margin: 24px auto;
+		margin: 0 auto;
 	}
 
 	& span {
@@ -152,6 +146,7 @@ input {
 	background: $code-bg;
 	border: 2.5px solid $main-btn;
 	box-shadow: 0 -69px 131px -88px $main-btn;
+
 	&__text {
 		width: 100%;
 		font-size: 20px;
@@ -159,6 +154,10 @@ input {
 		padding-top: 2rem;
 		line-height: 2rem;
 		color: $code-txtColor;
+	}
+
+	@include mobile {
+		height: auto;
 	}
 }
 
