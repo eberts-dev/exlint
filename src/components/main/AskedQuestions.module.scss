@@ -1,75 +1,76 @@
 .asked {
-  padding-bottom: 192px;
+	padding-bottom: 192px;
 }
 
 .wrapper {
-  max-width: 1200px;
-  width: calc(100% - 10em);
-  margin: 0 auto;
-  @media (max-width: 990px) {
+	max-width: 1200px;
+	width: calc(100% - 10em);
+	margin: 0 auto;
 
-  }
+	@include mobile {
+		width: calc(100% - 2em);
+	}
 }
 
 .tab {
-  padding: 1.5em;
-  border-top: 1px solid $border;
+	padding: 1.5em;
+	border-top: 1px solid $border;
 }
 
 .panel {
-  max-width: 1200px;
-  padding: 0;
-  display: none;
-  padding: 0 18px;
-  padding: 38px 0 0;
-  transition: max-height 0.2s ease-out;
-  position: relative;
-  @media (max-width: 960px) {
-    max-width: 700px;
-  }
+	max-width: 1200px;
+	padding: 0;
+	display: none;
+	padding: 0 18px;
+	padding: 38px 0 0;
+	transition: max-height 0.2s ease-out;
+	position: relative;
+	@media (max-width: 960px) {
+		max-width: 700px;
+	}
 }
 
 .icon {
-  display: flex;
-  justify-content: space-between;
-  & img {
-    width: 1.5em;
-  }
+	display: flex;
+	justify-content: space-between;
+	& img {
+		width: 1.5em;
+	}
 }
 
 .tabTitle {
-  display: flex;
-  justify-content: space-between;
-  width: 98%;
-  cursor: pointer;
-  font-size: 24px;
-  background: none;
-  text-align: left;
-  color: $list;
+	display: flex;
+	justify-content: space-between;
+	width: 98%;
+	cursor: pointer;
+	font-size: 24px;
+	background: none;
+	text-align: left;
+	color: $list;
 }
 
 .text {
-  font-size: 20px;
-  line-height: 1.5;
-  color: $white;
-  @media (max-width: 720px) {
-    font-size: 20px;
-  }
+	font-size: 20px;
+	line-height: 1.5;
+	color: $white;
+	@media (max-width: 720px) {
+		font-size: 20px;
+	}
 }
 
 .link {
-  font-weight: 500;
-  color: $white;
-  text-decoration: none;
-  border-bottom: 0.02em solid $white;
-  cursor: pointer;
-  &:hover {
-    color: $main-btn;
-    border-color: $main-btn;
-    transition: .2s;
-  }
+	font-weight: 500;
+	color: $white;
+	text-decoration: none;
+	border-bottom: 0.02em solid $white;
+	cursor: pointer;
+	&:hover {
+		color: $main-btn;
+		border-color: $main-btn;
+		transition: 0.2s;
+	}
 }
 
 .title {
-  padding-bottom: 24px;
+	padding-bottom: 24px;
 }

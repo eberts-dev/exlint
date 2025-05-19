@@ -1,72 +1,133 @@
 .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
 
-  &.visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
+	&.visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
 }
 
 h2 {
-  font-size: 3rem;
+	font-size: 3rem;
+
+	@include tablet {
+		font-size: 2.5rem;
+	}
+
+	@include mobile {
+		font-size: 1.7rem;
+	}
 }
 
 .text {
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-  padding-top: 2em;
-  line-height: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	font-size: 1rem;
+	padding-top: 2em;
+	line-height: 1.5rem;
 }
 
 .content {
-  background: $code-bg;
-  color: $white;
-  padding: 2rem;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 800px;
-  max-height: 90vh;
-  cursor: default;
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
-  
-  .visible & {
-    transform: translateY(0);
-  }
+	background: $code-bg;
+	color: $white;
+	padding: 2rem;
+	border-radius: 8px;
+	max-width: 800px;
+	max-height: 90vh;
+	cursor: default;
+	transform: translateY(20px);
+	transition: transform 0.3s ease;
+
+	.visible & {
+		transform: translateY(0);
+	}
+
+	@include desktop {
+		width: calc(100% - 10rem);
+	}
+
+	@include tablet {
+		width: calc(100% - 7rem);
+	}
+
+	@include mobile {
+		width: calc(100% - 6rem);
+		padding: 1.5rem;
+	}
 }
 
-h3 { 
-  padding-bottom: 1.3rem;
+h3 {
+	padding-bottom: 1.3rem;
 }
 
 .modalBtn {
-  display: flex;
-  justify-self: flex-end;
-  cursor: pointer;
+	display: flex;
+	justify-self: flex-end;
+	cursor: pointer;
+	position: relative;
+	order: 2;
+
+	@include mobile {
+		width: auto;
+		order: 1;
+	}
 }
 
 .scrollableContent {
-  padding: 20px;
-  overflow-y: auto;
-  max-height: calc(80vh - 15rem);
-  margin-top: 1.5rem;
+	padding: 20px;
+	overflow-y: auto;
+	max-height: calc(80vh - 15rem);
+	margin-top: 1.5rem;
+
+	&::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $scrollbar-track;
+		border-radius: 4px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $scrollbar-thumb;
+		border-radius: 4px;
+		transition: background 0.2s ease;
+
+		&:hover {
+			background: $scrollbar-thumb-hover;
+		}
+	}
+
+	scrollbar-width: thin;
+	scrollbar-color: $scrollbar-thumb $scrollbar-track;
+
+	@include mobile {
+		padding: 15px;
+		max-height: calc(70vh - 12rem);
+	}
 }
 
 .row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	gap: 2rem;
+	justify-content: space-between;
+	align-items: center;
+
+	@include tablet {
+		flex-direction: column;
+		align-items: flex-end;
+	}
 }

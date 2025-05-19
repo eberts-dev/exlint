@@ -1,13 +1,14 @@
 .output {
-  font-family: monospace;
-  padding: 2rem;
-  border-radius: 5px;
-  background: $code-bg;
-  border: 2.5px solid $main-btn;
-  box-shadow: $box-s;
-  position: relative;
-  font-size: 1rem;
-  &::before {
+	font-family: monospace;
+	padding: 2rem;
+	border-radius: 5px;
+	background: $code-bg;
+	border: 2.5px solid $main-btn;
+	box-shadow: $box-s;
+	position: relative;
+	font-size: 1rem;
+
+	&::before {
 		top: 159px;
 		left: auto;
 		content: '';
@@ -16,50 +17,62 @@
 		height: 12px;
 		right: -83px;
 		position: absolute;
-		background: url("@assets/img/line3.svg") no-repeat;
+		background: url('@assets/img/line3.svg') no-repeat;
+
+		@include mobile {
+			bottom: -47px;
+			top: auto;
+			margin: 0 auto;
+			left: -80px;
+			rotate: 90deg;
+		}
 	}
 }
 
 .stylelint {
-  padding: 2rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  background: $code-bg;
-  border: 2.5px solid $main-btn;
-  box-shadow: $box-s;
+	padding: 2rem;
+	font-size: 1rem;
+	border-radius: 5px;
+	background: $code-bg;
+	border: 2.5px solid $main-btn;
+	box-shadow: $box-s;
 	font-family: monospace;
+
+	@include mobile {
+		padding: 1rem;
+	}
 }
 
 .number {
-  color: $code-gray;
+	color: $code-gray;
 }
 
 .purple {
-  padding-left: 40px;
-  color: $code-color;
+	padding-left: 40px;
+	color: $code-color;
 }
 
 .rose {
-  padding-bottom: 20px;
-  color: $code-tag;
+	padding-bottom: 20px;
+	color: $code-tag;
 }
 
 .hot {
-  color: $code-red;
+	color: $code-red;
 }
 
 .gelb {
-  color: $code-class;
+	color: $code-class;
 }
 
 .red {
-  color: $red-txt;
+	color: $red-txt;
 }
 
 .white {
-  color: $white;
+	color: $white;
 }
 
 .gray {
-  color: $code-gray;
+	color: $code-gray;
 }

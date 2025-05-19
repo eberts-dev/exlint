@@ -2,40 +2,38 @@
 @use '@styles/colors' as *;
 @use '@styles/mixins' as *;
 
-
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: $page;
+	font-family: 'Poppins', sans-serif;
+	background: $page;
 }
 
 h2 {
-  font-size: 36px;
-  background: $h2-gradient;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+	background: $h2-gradient;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .stylelint__css code {
-  display: flex;
-  align-items: top;
-  justify-content: center;
+	display: flex;
+	align-items: top;
+	justify-content: center;
 }
 
 ul {
-  list-style: none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
 }
 
 button {
-  border: none;
+	border: none;
 }
 
 p {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
