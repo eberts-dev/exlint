@@ -29,6 +29,4 @@ src/
 
 ```
 
-(адаптив в разработке)
-
 https://exlint.vercel.app/
