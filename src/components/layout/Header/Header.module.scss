@@ -10,10 +10,13 @@
 }
 
 .wrapper {
-	@include container;
+	width: calc(100% - 2rem);
+	@include desktop {
+		@include tablet;
+	}
 
 	@include mobile {
-		width: calc(100% - 2rem);
+		width: auto;
 	}
 
 	@include mobile-small {
@@ -134,8 +137,10 @@ input {
 }
 
 .terminal {
-	width: calc(100% - 3rem);
+	width: calc(100% - 10rem);
+	max-width: 800px;
 	font-family: monospace;
+	margin: 0 auto;
 	padding: 20px;
 	height: 513px;
 	border-radius: 5px;
@@ -154,6 +159,7 @@ input {
 
 	@include mobile {
 		height: auto;
+		width: calc(100% - 3rem);
 	}
 }
 
