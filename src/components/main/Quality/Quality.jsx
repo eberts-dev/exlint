@@ -1,6 +1,6 @@
-import title from '@components/layout/Header/Header.module.scss'
-import Btn from '@ui/Btn/Btn'
-import styles from './Quality.module.scss'
+import title from '@components/layout/Header/Header.module.scss';
+import Btn from '@ui/Btn/Btn';
+import styles from './Quality.module.scss';
 
 const Quality = ({
 	titleStart = "Don't settle on quality,",
@@ -10,7 +10,7 @@ const Quality = ({
 		'Unlimited policy group runs',
 		'Open Source CLI',
 		'GitHub Action CI/CD',
-	]
+	];
 
 	return (
 		<>
@@ -43,7 +43,7 @@ const Quality = ({
 				</div>
 			</div>
 		</>
-	)
-}
+	);
+};
 
-export default Quality
+export default Quality;
