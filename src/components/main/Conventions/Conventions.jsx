@@ -154,7 +154,7 @@ const Conventions = forwardRef((props, ref) => {
 				</div>
 
 				<div className={styles.runCommand}>
-					{ruleAddedContent.find(item => item.type === 'run')?.text}
+					{ruleAddedContent.find((item) => item.type === 'run')?.text}
 				</div>
 
 				<div className={styles.ideContent}>
