@@ -24,7 +24,7 @@ const Menu = ({ onScrollToConsole }) => {
 		closeModal: closeDocModal,
 	} = useModal()
 
-	const getMenuItemProps = item => {
+	const getMenuItemProps = (item) => {
 		if (item.modal) {
 			return {
 				onClick: openDocModal,
@@ -51,7 +51,7 @@ const Menu = ({ onScrollToConsole }) => {
 			<img className={styles.logo} src={logo} alt='exlint' />
 
 			<ul className={styles.list}>
-				{Object.values(MENU_ITEMS).map(item => (
+				{Object.values(MENU_ITEMS).map((item) => (
 					<li key={item.id}>
 						{item.href ? (
 							<a {...getMenuItemProps(item)}>{item.label}</a>

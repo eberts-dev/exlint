@@ -4,7 +4,7 @@ import AskedQuestions from '@components/main/AskedQuestions'
 import BestPractices from '@components/main/BestPractices'
 import Quality from '@components/main/Quality'
 import ShareConventions from '@components/main/ShareConventions'
-import Sprite from '@components/Sprite'
+import Sprite from '@ui/svg/Sprite'
 
 function App() {
 	return (

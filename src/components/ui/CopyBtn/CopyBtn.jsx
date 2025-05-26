@@ -1,33 +1,31 @@
 import { useState } from 'react'
 
-import icon from '@components/layout/Header/Header.module.scss'
 import styles from '@ui/CopyBtn/CopyBtn.module.scss'
+import { Icon } from '@ui/svg/Icon'
 
-const CopyBtn = ({targetId}) => {
-
-	const [isCopied, setIsCopied] = useState(false); 
+const CopyBtn = ({ targetId }) => {
+	const [isCopied, setIsCopied] = useState(false)
 
 	const handleCopy = async () => {
-		const targetElement = document.getElementById(targetId);
+		const targetElement = document.getElementById(targetId)
 
 		if (targetElement) {
 			try {
-				await navigator.clipboard.writeText(targetElement.value); 
-				setIsCopied(true);
-				setTimeout(() => setIsCopied(false), 2000); 
-			}
-			catch (error){
-				console.error('Failed to copy text: ', error);
+				await navigator.clipboard.writeText(targetElement.value)
+				setIsCopied(true)
+				setTimeout(() => setIsCopied(false), 2000)
+			} catch (error) {
+				console.error('Failed to copy text: ', error)
 			}
 		}
 	}
 
-	return ( 
-		<div className={styles['btn-wrapper']}>
-			<button onClick={handleCopy} className={icon.social}></button>
+	return (
+		<>
+			<Icon id='copy-btn' onClick={handleCopy} className={styles.social} />
 			{isCopied && <span className={styles.tooltip}>Copied!</span>}
-		</div>
-	 );
+		</>
+	)
 }
- 
-export default CopyBtn;
+
+export default CopyBtn

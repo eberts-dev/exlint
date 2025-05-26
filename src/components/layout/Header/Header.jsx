@@ -1,18 +1,18 @@
-import { useScroll } from '@/hooks/useScroll';
-import { consoleRef, conventionsRef } from '@/utils/scrollRefs';
+import { useScroll } from '@/hooks/useScroll'
+import { consoleRef, conventionsRef } from '@/utils/scrollRefs'
+import Conventions from '@components/main/Conventions'
+import Menu from '@components/menu/Menu'
 
-import Conventions from '@components/main/Conventions';
-import Menu from '@components/menu/Menu';
-import Btn from '@ui/Btn/Btn';
-import CopyableInput from '@ui/CopyableInput';
+import Btn from '@ui/Btn/Btn'
+import CopyableInput from '@ui/CopyableInput'
 
-import styles from './Header.module.scss';
+import styles from './Header.module.scss'
 
 const Header = () => {
-	const handleScrollToConsole = useScroll(consoleRef);
-	const handleScrollToConventions = useScroll(conventionsRef);
+	const handleScrollToConsole = useScroll(consoleRef)
+	const handleScrollToConventions = useScroll(conventionsRef)
 
-	const installCommand = 'npm install --global @exlint.io/cli';
+	const installCommand = 'npm install --global @exlint.io/cli'
 	const heroContent = {
 		title: {
 			l1: 'Empower Best Practices',
@@ -20,7 +20,7 @@ const Header = () => {
 		},
 		description: 'Keep your projects clean with Exlint.',
 		btnText: 'Quick Start',
-	};
+	}
 	const terminalContent = {
 		lines: [
 			{
@@ -41,7 +41,7 @@ const Header = () => {
 				highlightLast: true, //выделение текста
 			},
 		],
-	};
+	}
 
 	return (
 		<>
@@ -55,12 +55,14 @@ const Header = () => {
 					</h1>
 
 					<div className={styles.console} ref={consoleRef}>
-						<CopyableInput
-							value={installCommand}
-							inputId='exlint-install-command'
-							ariaLabel='Exlint installation command'
-							className={styles.command}
-						/>
+						<div className={styles.inputRow}>
+							<CopyableInput
+								value={installCommand}
+								inputId='exlint-install-command'
+								ariaLabel='Exlint installation command'
+								className={styles.command}
+							/>
+						</div>
 
 						<div className={styles.qstart}>
 							<Btn onClick={handleScrollToConventions} className={styles.btn}>
@@ -75,7 +77,7 @@ const Header = () => {
 									{line.prefix}
 									{line.parts.map((part, partIndex) => {
 										const isHighlighted =
-											line.highlightLast && partIndex === line.parts.length - 1;
+											line.highlightLast && partIndex === line.parts.length - 1
 
 										return (
 											<span
@@ -85,7 +87,7 @@ const Header = () => {
 												{part}
 												<br />
 											</span>
-										);
+										)
 									})}
 								</p>
 							))}
@@ -95,7 +97,7 @@ const Header = () => {
 			</header>
 			<Conventions ref={conventionsRef} />
 		</>
-	);
-};
+	)
+}
 
-export default Header;
+export default Header

@@ -2,8 +2,8 @@ export const MENU_ITEMS = {
 	documentation: {
 		id: 'docs',
 		label: 'Documentations',
-		className: 'doc',		
-		modal: true //флаг для открытия модального окна
+		className: 'doc',
+		modal: true, //флаг для модального окна
 	},
 	github: {
 		id: 'github',
@@ -20,6 +20,5 @@ export const MENU_ITEMS = {
 		href: 'https://discord.gg/',
 		target: '_blank',
 		rel: 'noopener noreferrer',
-	}
+	},
 }
-
