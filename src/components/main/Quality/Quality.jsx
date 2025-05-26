@@ -1,16 +1,25 @@
-import title from '@components/layout/Header/Header.module.scss';
-import Btn from '@ui/Btn/Btn';
-import styles from './Quality.module.scss';
+import { useModal } from '@/hooks/useModal'
+import title from '@components/layout/Header/Header.module.scss'
+import DocModal from '@components/modal/DocModal'
+import Btn from '@ui/Btn/Btn'
+import styles from './Quality.module.scss'
 
 const Quality = ({
 	titleStart = "Don't settle on quality,",
 	titleEnd = 'enforce clean code.',
+	description = 'Best for individual developers and teams',
 }) => {
 	const FEATURES = [
 		'Unlimited policy group runs',
 		'Open Source CLI',
 		'GitHub Action CI/CD',
-	];
+	]
+
+	const {
+		isModalOpen: isDocModalOpen,
+		openModal: openDocModal,
+		closeModal: closeDocModal,
+	} = useModal()
 
 	return (
 		<>
@@ -26,9 +35,7 @@ const Quality = ({
 							Open Source <span>Free</span>
 						</p>
 						<div className={styles.wrapper}>
-							<div className={styles.description}>
-								Best for individual developers and teams
-							</div>
+							<div className={styles.description}>{description}</div>
 
 							<ul className={styles.featuresList}>
 								{FEATURES.map((feature, index) => (
@@ -38,12 +45,13 @@ const Quality = ({
 								))}
 							</ul>
 						</div>
-						<Btn>View Docs</Btn>
+						<Btn onClick={openDocModal}>View Docs</Btn>
 					</div>
 				</div>
 			</div>
+			<DocModal isOpen={isDocModalOpen} onClose={closeDocModal} />
 		</>
-	);
-};
+	)
+}
 
-export default Quality;
+export default Quality

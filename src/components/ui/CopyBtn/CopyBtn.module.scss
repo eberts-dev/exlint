@@ -1,20 +1,28 @@
 .btn-wrapper {
-  position: relative;
-  display: inline-block;
+	position: relative;
+	display: inline-block;
 	cursor: pointer;
-  color: $white;
+	color: $white;
 }
 
 .tooltip {
 	position: absolute;
-  top: -3px;
-  right: 0;
-  transform: translateX(-50%);
-  background: $tooltip-bg;
-  color: $white;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 12px;
-  white-space: nowrap;
+	top: -3px;
+	right: 0;
+	transform: translateX(-50%);
+	background: $tooltip-bg;
+	color: $white;
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-size: 12px;
+	white-space: nowrap;
 	cursor: pointer;
+}
+
+.social {
+	width: 24px;
+	height: 24px;
+	display: block;
+	cursor: pointer;
+	position: relative;
 }
